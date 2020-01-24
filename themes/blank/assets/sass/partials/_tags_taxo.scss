@@ -1,0 +1,38 @@
+///
+/// Basic rules for tags
+///
+.site-tags {
+  @include media('>=phone') {
+    margin: 0;
+  }
+
+  @include media('>=tablet') {
+    margin: 1ex 0;
+    padding-left: 0;
+  }
+
+  padding: 0;
+
+  &__tag {
+
+    @include media('>=phone') {
+      display: inline-block;
+    }
+
+    @include media('>=tablet') {
+      display: block;
+    }
+
+    @include responsive-font(1vw, 1em, 4em, 36px);
+    text-decoration: none;
+    margin: 1ex 0;
+    padding: 0;
+  }
+}
+
+.fonts-loaded {
+
+  .site-tags {
+    font-family: $frank-new;
+  }
+}

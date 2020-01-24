@@ -1,0 +1,16 @@
+{{ partial "header.html" . }}
+<main class="taxo-list-portfolio">
+  <div class="grid-wrapper">
+    <h1>{{ .Title }}</h1>
+    <ul class="grid-wrapper__listParent--portfolio-list">
+      {{ $paginator := .Paginate (where .Data.Pages "Type" "portfolio") 20 }}
+      {{ range $paginator.Pages }}
+      {{ partial "portfolio_hero" . }}
+      {{ end }}
+    </ul>
+  </div>
+  <!-- {{ partial "pagination.html" . }} -->
+</main>
+
+{{ partial "sidebar.html" . }}
+{{ partial "footer.html" . }}

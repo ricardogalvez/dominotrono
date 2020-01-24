@@ -1,120 +1,148 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
-  <defs>
-    <style>
-      .a{fill:#29abe2}.b{fill:#f0f}.c{fill:#22b573}.d{fill:#662d91}.e{fill:#93278f}.f{fill:#0071bc}
-    </style>
-  </defs>
-  <title>
-    portfolio_overlay
-  </title>
-  <circle class="a" cx="250" cy="250" r="250"/>
-  <path class="b" d="M500 0L0 500h500V0z"/>
-  <path class="c" d="M0 0h250v250H0zM250 250h250v250H250z"/>
-  <circle class="d" cx="125" cy="125" r="75"/>
-  <circle class="d" cx="375" cy="125" r="75"/>
-  <circle class="d" cx="125" cy="375" r="75"/>
-  <circle class="d" cx="375" cy="375" r="75"/>
-  <path class="e" d="M500 0h-50v50H350v100H250v100h-75v119l-45 1v30l-29.929-.071L50 400l.333 49.667L0 450v50h500V0z"/>
-  <g>
-    <circle class="f" cx="25" cy="25" r="25"/>
-    <circle class="f" cx="75" cy="75" r="25"/>
-    <circle class="f" cx="125" cy="125" r="25"/>
-    <circle class="f" cx="175" cy="175" r="25"/>
-    <circle class="f" cx="225" cy="225" r="25"/>
-    <circle class="f" cx="275" cy="275" r="25"/>
-    <circle class="f" cx="75" cy="125" r="25"/>
-    <circle class="f" cx="125" cy="175" r="25"/>
-    <circle class="f" cx="175" cy="225" r="25"/>
-    <circle class="f" cx="225" cy="275" r="25"/>
-    <circle class="f" cx="275" cy="325" r="25"/>
-    <circle class="f" cx="75" cy="175" r="25"/>
-    <circle class="f" cx="125" cy="225" r="25"/>
-    <circle class="f" cx="175" cy="275" r="25"/>
-    <circle class="f" cx="225" cy="325" r="25"/>
-    <circle class="f" cx="275" cy="375" r="25"/>
-    <circle class="f" cx="75" cy="225" r="25"/>
-    <circle class="f" cx="125" cy="275" r="25"/>
-    <circle class="f" cx="175" cy="325" r="25"/>
-    <circle class="f" cx="225" cy="375" r="25"/>
-    <circle class="f" cx="275" cy="425" r="25"/>
-    <circle class="f" cx="75" cy="275" r="25"/>
-    <circle class="f" cx="125" cy="325" r="25"/>
-    <circle class="f" cx="175" cy="375" r="25"/>
-    <circle class="f" cx="225" cy="425" r="25"/>
-    <circle class="f" cx="275" cy="475" r="25"/>
-    <circle class="f" cx="75" cy="325" r="25"/>
-    <circle class="f" cx="125" cy="375" r="25"/>
-    <circle class="f" cx="175" cy="425" r="25"/>
-    <circle class="f" cx="225" cy="475" r="25"/>
-    <circle class="f" cx="75" cy="375" r="25"/>
-    <circle class="f" cx="125" cy="425" r="25"/>
-    <circle class="f" cx="175" cy="475" r="25"/>
-    <circle class="f" cx="75" cy="425" r="25"/>
-    <circle class="f" cx="125" cy="475" r="25"/>
-    <circle class="f" cx="75" cy="475" r="25"/>
-    <circle class="f" cx="25" cy="75" r="25"/>
-    <circle class="f" cx="25" cy="125" r="25"/>
-    <circle class="f" cx="25" cy="175" r="25"/>
-    <circle class="f" cx="25" cy="225" r="25"/>
-    <circle class="f" cx="25" cy="275" r="25"/>
-    <circle class="f" cx="25" cy="325" r="25"/>
-    <circle class="f" cx="25" cy="375" r="25"/>
-    <circle class="f" cx="25" cy="425" r="25"/>
-    <circle class="f" cx="25" cy="475" r="25"/>
-    <circle class="f" cx="325" cy="325" r="25"/>
-    <circle class="f" cx="375" cy="375" r="25"/>
-    <circle class="f" cx="425" cy="425" r="25"/>
-    <circle class="f" cx="475" cy="475" r="25"/>
-    <circle class="f" cx="325" cy="375" r="25"/>
-    <circle class="f" cx="375" cy="425" r="25"/>
-    <circle class="f" cx="425" cy="475" r="25"/>
-    <circle class="f" cx="325" cy="425" r="25"/>
-    <circle class="f" cx="375" cy="475" r="25"/>
-    <circle class="f" cx="325" cy="475" r="25"/>
-  </g>
-  <g>
-    <circle class="f" cx="25" cy="25" r="25"/>
-    <circle class="f" cx="75" cy="75" r="25"/>
-    <circle class="f" cx="125" cy="125" r="25"/>
-    <circle class="f" cx="175" cy="175" r="25"/>
-    <circle class="f" cx="225" cy="225" r="25"/>
-    <circle class="f" cx="75" cy="125" r="25"/>
-    <circle class="f" cx="325" cy="175" r="25"/>
-    <circle class="f" cx="175" cy="225" r="25"/>
-    <circle class="f" cx="225" cy="275" r="25"/>
-    <circle class="f" cx="275" cy="325" r="25"/>
-    <circle class="f" cx="275" cy="175" r="25"/>
-    <circle class="f" cx="125" cy="225" r="25"/>
-    <circle class="f" cx="475" cy="275" r="25"/>
-    <circle class="f" cx="225" cy="325" r="25"/>
-    <circle class="f" cx="75" cy="225" r="25"/>
-    <circle class="f" cx="425" cy="275" r="25"/>
-    <circle class="f" cx="175" cy="325" r="25"/>
-    <circle class="f" cx="225" cy="375" r="25"/>
-    <circle class="f" cx="275" cy="425" r="25"/>
-    <circle class="f" cx="275" cy="475" r="25"/>
-    <circle class="f" cx="375" cy="275" r="25"/>
-    <circle class="f" cx="125" cy="325" r="25"/>
-    <circle class="f" cx="325" cy="75" r="25"/>
-    <circle class="f" cx="225" cy="425" r="25"/>
-    <circle class="f" cx="75" cy="325" r="25"/>
-    <circle class="f" cx="125" cy="375" r="25"/>
-    <circle class="f" cx="325" cy="125" r="25"/>
-    <circle class="f" cx="475" cy="375" r="25"/>
-    <circle class="f" cx="125" cy="425" r="25"/>
-    <circle class="f" cx="75" cy="425" r="25"/>
-    <circle class="f" cx="125" cy="75" r="25"/>
-    <circle class="f" cx="25" cy="125" r="25"/>
-    <circle class="f" cx="225" cy="175" r="25"/>
-    <circle class="f" cx="25" cy="225" r="25"/>
-    <circle class="f" cx="325" cy="275" r="25"/>
-    <circle class="f" cx="25" cy="325" r="25"/>
-    <circle class="f" cx="425" cy="375" r="25"/>
-    <circle class="f" cx="475" cy="425" r="25"/>
-    <circle class="f" cx="325" cy="325" r="25"/>
-    <circle class="f" cx="375" cy="375" r="25"/>
-    <circle class="f" cx="475" cy="475" r="25"/>
-    <circle class="f" cx="325" cy="375" r="25"/>
-    <circle class="f" cx="325" cy="425" r="25"/>
-  </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 500 500" style="enable-background:new 0 0 500 500;" xml:space="preserve">
+<style type="text/css">
+	.st0{display:none;fill:#FF00FF;}
+	.st1{display:none;fill:#22B573;}
+	.st2{display:none;fill:#93278F;}
+	.st3{display:none;}
+	.st4{display:inline;fill:#0071BC;}
+	.st5{display:inline;}
+</style>
+<g id="Layer_1">
+	<title>portfolio_overlay</title>
+	<path id="rightDiagonal" class="st0" d="M500,0L0,500h500V0z"/>
+	<path class="st1" d="M0,0h250v250H0V0z M250,250h250v250H250V250z"/>
+	<path class="st2" d="M500,0h-50v50H350v100H250v100h-75v119l-45,1v30l-29.9-0.1L50,400l0.3,49.7L0,450v50h500V0z"/>
+	<g class="st3">
+		<circle class="st4" cx="25" cy="25" r="25"/>
+		<circle class="st4" cx="75" cy="75" r="25"/>
+		<circle class="st4" cx="125" cy="125" r="25"/>
+		<circle class="st4" cx="175" cy="175" r="25"/>
+		<circle class="st4" cx="225" cy="225" r="25"/>
+		<circle class="st4" cx="275" cy="275" r="25"/>
+		<circle class="st4" cx="75" cy="125" r="25"/>
+		<circle class="st4" cx="125" cy="175" r="25"/>
+		<circle class="st4" cx="175" cy="225" r="25"/>
+		<circle class="st4" cx="225" cy="275" r="25"/>
+		<circle class="st4" cx="275" cy="325" r="25"/>
+		<circle class="st4" cx="75" cy="175" r="25"/>
+		<circle class="st4" cx="125" cy="225" r="25"/>
+		<circle class="st4" cx="175" cy="275" r="25"/>
+		<circle class="st4" cx="225" cy="325" r="25"/>
+		<circle class="st4" cx="275" cy="375" r="25"/>
+		<circle class="st4" cx="75" cy="225" r="25"/>
+		<circle class="st4" cx="125" cy="275" r="25"/>
+		<circle class="st4" cx="175" cy="325" r="25"/>
+		<circle class="st4" cx="225" cy="375" r="25"/>
+		<circle class="st4" cx="275" cy="425" r="25"/>
+		<circle class="st4" cx="75" cy="275" r="25"/>
+		<circle class="st4" cx="125" cy="325" r="25"/>
+		<circle class="st4" cx="175" cy="375" r="25"/>
+		<circle class="st4" cx="225" cy="425" r="25"/>
+		<circle class="st4" cx="275" cy="475" r="25"/>
+		<circle class="st4" cx="75" cy="325" r="25"/>
+		<circle class="st4" cx="125" cy="375" r="25"/>
+		<circle class="st4" cx="175" cy="425" r="25"/>
+		<circle class="st4" cx="225" cy="475" r="25"/>
+		<circle class="st4" cx="75" cy="375" r="25"/>
+		<circle class="st4" cx="125" cy="425" r="25"/>
+		<circle class="st4" cx="175" cy="475" r="25"/>
+		<circle class="st4" cx="75" cy="425" r="25"/>
+		<circle class="st4" cx="125" cy="475" r="25"/>
+		<circle class="st4" cx="75" cy="475" r="25"/>
+		<circle class="st4" cx="25" cy="75" r="25"/>
+		<circle class="st4" cx="25" cy="125" r="25"/>
+		<circle class="st4" cx="25" cy="175" r="25"/>
+		<circle class="st4" cx="25" cy="225" r="25"/>
+		<circle class="st4" cx="25" cy="275" r="25"/>
+		<circle class="st4" cx="25" cy="325" r="25"/>
+		<circle class="st4" cx="25" cy="375" r="25"/>
+		<circle class="st4" cx="25" cy="425" r="25"/>
+		<circle class="st4" cx="25" cy="475" r="25"/>
+		<circle class="st4" cx="325" cy="325" r="25"/>
+		<circle class="st4" cx="375" cy="375" r="25"/>
+		<circle class="st4" cx="425" cy="425" r="25"/>
+		<circle class="st4" cx="475" cy="475" r="25"/>
+		<circle class="st4" cx="325" cy="375" r="25"/>
+		<circle class="st4" cx="375" cy="425" r="25"/>
+		<circle class="st4" cx="425" cy="475" r="25"/>
+		<circle class="st4" cx="325" cy="425" r="25"/>
+		<circle class="st4" cx="375" cy="475" r="25"/>
+		<circle class="st4" cx="325" cy="475" r="25"/>
+	</g>
+	<g class="st3">
+		<circle class="st4" cx="25" cy="25" r="25"/>
+		<circle class="st4" cx="75" cy="75" r="25"/>
+		<circle class="st4" cx="125" cy="125" r="25"/>
+		<circle class="st4" cx="175" cy="175" r="25"/>
+		<circle class="st4" cx="225" cy="225" r="25"/>
+		<circle class="st4" cx="75" cy="125" r="25"/>
+		<circle class="st4" cx="325" cy="175" r="25"/>
+		<circle class="st4" cx="175" cy="225" r="25"/>
+		<circle class="st4" cx="225" cy="275" r="25"/>
+		<circle class="st4" cx="275" cy="325" r="25"/>
+		<circle class="st4" cx="275" cy="175" r="25"/>
+		<circle class="st4" cx="125" cy="225" r="25"/>
+		<circle class="st4" cx="475" cy="275" r="25"/>
+		<circle class="st4" cx="225" cy="325" r="25"/>
+		<circle class="st4" cx="75" cy="225" r="25"/>
+		<circle class="st4" cx="425" cy="275" r="25"/>
+		<circle class="st4" cx="175" cy="325" r="25"/>
+		<circle class="st4" cx="225" cy="375" r="25"/>
+		<circle class="st4" cx="275" cy="425" r="25"/>
+		<circle class="st4" cx="275" cy="475" r="25"/>
+		<circle class="st4" cx="375" cy="275" r="25"/>
+		<circle class="st4" cx="125" cy="325" r="25"/>
+		<circle class="st4" cx="325" cy="75" r="25"/>
+		<circle class="st4" cx="225" cy="425" r="25"/>
+		<circle class="st4" cx="75" cy="325" r="25"/>
+		<circle class="st4" cx="125" cy="375" r="25"/>
+		<circle class="st4" cx="325" cy="125" r="25"/>
+		<circle class="st4" cx="475" cy="375" r="25"/>
+		<circle class="st4" cx="125" cy="425" r="25"/>
+		<circle class="st4" cx="75" cy="425" r="25"/>
+		<circle class="st4" cx="125" cy="75" r="25"/>
+		<circle class="st4" cx="25" cy="125" r="25"/>
+		<circle class="st4" cx="225" cy="175" r="25"/>
+		<circle class="st4" cx="25" cy="225" r="25"/>
+		<circle class="st4" cx="325" cy="275" r="25"/>
+		<circle class="st4" cx="25" cy="325" r="25"/>
+		<circle class="st4" cx="425" cy="375" r="25"/>
+		<circle class="st4" cx="475" cy="425" r="25"/>
+		<circle class="st4" cx="325" cy="325" r="25"/>
+		<circle class="st4" cx="375" cy="375" r="25"/>
+		<circle class="st4" cx="475" cy="475" r="25"/>
+		<circle class="st4" cx="325" cy="375" r="25"/>
+		<circle class="st4" cx="325" cy="425" r="25"/>
+	</g>
+</g>
+<g id="fourDots_1_">
+	<g id="fourDots" class="st3">
+		<circle class="st5" cx="125" cy="125" r="105"/>
+		<circle class="st5" cx="375" cy="125" r="105"/>
+		<circle class="st5" cx="125" cy="375" r="105"/>
+		<circle class="st5" cx="375" cy="375" r="105"/>
+	</g>
+</g>
+<g id="bigCircle_1_">
+	<path d="M0,0v500h500V0H0z M250,476C125.2,476,24,374.8,24,250S125.2,24,250,24s226,101.2,226,226S374.8,476,250,476z"/>
+</g>
+<g id="quarteCircle" class="st3">
+	<path id="diagonalDot" d="M0,0l500,500V0H0z M375,230c-58,0-105-47-105-105c0-58,47-105,105-105c58,0,105,47,105,105
+		C480,183,433,230,375,230z"/>
+	<path class="st5" d="M500,0c0,63,0,500,0,500s-100,0-500,0C0,223.9,223.9,0,500,0z"/>
+</g>
+<g id="Layer_5" class="st3">
+	<g id="variableDots" class="st5">
+		<circle cx="145" cy="145" r="145"/>
+		<circle cx="351.5" cy="352.5" r="146"/>
+		<circle cx="422.5" cy="73.5" r="73.5"/>
+		<circle cx="73.5" cy="424.5" r="73.5"/>
+	</g>
+</g>
+<g id="oneCircle" class="st3">
+	<circle id="bigCircle" class="st5" cx="250" cy="250" r="250"/>
+</g>
 </svg>

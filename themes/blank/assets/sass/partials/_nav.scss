@@ -1,0 +1,195 @@
+///
+/// Navigation
+///
+
+.site-header {
+  /// Controls initial display only
+  &__siteNavigation {
+    // Mobile Nav
+    button {
+      @include media('>=phone') {
+        @supports not (display: flex) {
+          display: block;
+        }
+
+        background: transparentize($site-dark-blue, 0.5);
+        border: none;
+        color: currentColor;
+        cursor: pointer;
+        font-size: 0.8em;
+        display: flex;
+        flex-direction: column;
+        padding: 1ex;
+
+        svg {
+          fill: currentColor;
+          height: 3rem;
+          width: 3rem;
+        }
+
+        .menu-label {
+          @include basic-drop-shadow('text');
+        }
+
+        .button-icon {
+          &__open {
+            display: block;
+            position: relative;
+            top: 0.25rem;
+          }
+
+          &__closed {
+            display: none;
+          }
+        }
+      } // /phone mq
+
+      &.button-active {
+        background: transparentize($site-background-color, 0.2);
+      }
+
+      @include media('>=tablet') {
+        display: none;
+      }
+
+      &:hover {
+        box-shadow: 0 0 0 2px $site-green-blue;
+      }
+
+      &:focus {
+        @include focus-ring(outline);
+      }
+    }
+
+    ul {
+      @include media('>=phone') {
+        display: none;
+
+        &.is-active {
+          background: transparentize($site-background-color, 0.2);
+          display: flex;
+          flex-direction: column;
+          flex-wrap: wrap;
+          height: 100vh;
+          justify-content: flex-start;
+          left: 0;
+          position: absolute;
+          width: 100%;
+          z-index: 1000;
+
+          li {
+            display: flex;
+            justify-content: flex-end;
+          }
+        }
+      }
+
+      @include media('>=tablet') {
+        display: flex;
+      }
+    }
+  }
+
+  /// Uses classes to control/style all else:
+  &__siteNavigation {
+    &--social-svg {
+      display: none;
+    }
+
+    &--items {
+      @supports (display: flex) {
+        display: flex;
+        flex-flow: row nowrap;
+
+        @include media('>=phone') {
+          padding-left: 0;
+        }
+
+        @include media('>=tablet') {
+          padding-left: 6vw;
+        }
+
+        @include media('>=tablet') {
+          grid-column: 1 / 6;
+          justify-content: flex-start;
+          padding: initial;
+        }
+      } // /@supports
+
+      li {
+        a {
+          @include basic-drop-shadow(text);
+          color: $site-white;
+          font-size: $base-font-normal;
+          text-decoration: none;
+        }
+
+        &:nth-child(n) {
+          @include media('>=phone') {
+          }
+
+          @include media('>=tablet') {
+            flex-basis: 25%;
+
+            &.social-icon {
+              @include basic-drop-shadow(svg);
+              flex-basis: 10%;
+              padding-top: 1.75ex;
+            }
+          }
+
+          @include media('>=desktop') {
+            flex-basis: 20%;
+          }
+        }
+
+        min-height: 7ex;
+        padding: 2ex;
+        margin: 0 0.15ex;
+      }
+
+      .social-icon {
+        a {
+          display: block;
+          width: 3.5rem;
+
+          &:hover {
+            box-shadow: none;
+          }
+
+          &:hover svg {
+            fill: $site-punk-pink;
+          }
+        }
+
+        svg {
+          fill: $site-white;
+          height: 3.5rem;
+        }
+      }
+
+      border-bottom: (3em / 16) solid $site-white;
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+    } // /ul
+
+    background: transparent;
+    font-family: $sans-serif;
+  }
+} // .site-header
+
+///
+/// Fonts loaded yo!
+///
+.fonts-loaded {
+  .site-header {
+    &__siteNavigation {
+      font-family: $frank-new;
+    }
+
+    .menu-label {
+      font-family: $frank-new;
+    }
+  }
+}

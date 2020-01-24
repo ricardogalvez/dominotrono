@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="svgIcon" viewBox="0 0 75 68">
+    <title>
+        menu open icon
+    </title>
+    <g fill="none" fill-rule="nonzero">
+        <path fill="#4a4a4a" d="M1 49l37 17.047 35.875-16.922V46L38 63.016 1 46z"/>
+        <path fill="#fff" d="M1 46l37 17.031 35.875-17.062v-5.751L38 56.016 1 40.218z"/>
+        <path fill="#9f9f9f" d="M38 56v7l35.937-17v-5.782z"/>
+        <g>
+            <path fill="#4a4a4a" d="M1 30l37 17.047 35.875-16.922V27L38 44.016 1 27z"/>
+            <path fill="#fff" d="M1 27l37 17.031 35.875-17.062v-5.751L38 37.016 1 21.218z"/>
+            <path fill="#9f9f9f" d="M38 37v7l35.937-17v-5.782z"/>
+        </g>
+        <g>
+            <path fill="#4a4a4a" d="M1 10l37 17.047 35.875-16.922V7L38 24.016 1 7z"/>
+            <path fill="#fff" d="M1 7l37 17.031L73.875 6.969V1.218L38 17.016 1 1.218z"/>
+            <path fill="#9f9f9f" d="M38 17v7L73.937 7V1.218z"/>
+        </g>
+    </g>
+</svg>

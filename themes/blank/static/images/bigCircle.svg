@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="250" height="250" aria-hidden="true" viewBox="0 0 250 250">
+    <title>
+        bigCircle
+    </title>
+    <g>
+        <path d="M125,250H250V125A125,125,0,0,1,125,250Z" style="fill:#231f20"/>
+        <path d="M125,0H0V125A125,125,0,0,1,125,0Z" style="fill:#231f20"/>
+        <path d="M0,125V250H125A125,125,0,0,1,0,125Z" style="fill:#231f20"/>
+        <path d="M125,0A125,125,0,0,1,250,125V0Z" style="fill:#231f20"/>
+    </g>
+</svg>

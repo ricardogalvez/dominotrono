@@ -1,0 +1,263 @@
+///
+/// Basic.js
+///
+const portfolioTile = document.querySelectorAll('.portfolio-flex__summary a');
+const tileParent = document.querySelectorAll(
+  '.portfolio-flex__content figure img',
+);
+
+for (let i = 0; i < portfolioTile.length; i++) {
+  const tileClasses = tileParent[i].classList;
+  portfolioTile[i].addEventListener('mouseenter', () => {
+    tileClasses.add('portfolioCardOff');
+    tileClasses.remove('portfolioCard');
+  });
+  portfolioTile[i].addEventListener('mouseleave', () => {
+    tileClasses.remove('portfolioCardOff');
+    tileClasses.add('portfolioCard');
+  });
+}
+///
+/// Mobile Nav
+///
+
+const mobileNavButton = document.getElementById('mobileNavButton');
+const mobileNavItems = document.getElementById('navItems');
+const mobileNavLabel = document.querySelector('.menu-label');
+const burger = document.getElementById('navControlOpen');
+const closer = document.getElementById('navControlClose');
+
+mobileNavButton.addEventListener('click', function() {
+  if (mobileNavItems.classList.contains('is-active')) {
+    mobileNavButton.classList.remove('button-active');
+    mobileNavItems.setAttribute('aria-expanded', 'false');
+    mobileNavItems.classList.remove('is-active');
+    mobileNavLabel.innerText = 'Menu';
+    closer.style.display = 'none';
+    burger.style.display = 'block';
+  } else {
+    mobileNavItems.classList.add('is-active');
+    mobileNavItems.setAttribute('aria-expanded', 'true');
+    mobileNavButton.classList.add('button-active');
+    mobileNavLabel.innerText = 'Close';
+    closer.style.display = 'block';
+    burger.style.display = 'none';
+  }
+});
+///
+/// Observer.js
+///
+document.addEventListener('DOMContentLoaded', function() {
+  const lazyImages = [].slice.call(document.querySelectorAll('img.lazy'));
+
+  if ('IntersectionObserver' in window) {
+    //console.log('IntersectionObserver done working...');
+    let lazyImageObserver = new IntersectionObserver(function(
+      entries,
+      observer,
+    ) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          let lazyImage = entry.target;
+          lazyImage.src = lazyImage.dataset.src;
+          lazyImage.srcset = lazyImage.dataset.srcset;
+          lazyImage.classList.remove('lazy');
+          lazyImageObserver.unobserve(lazyImage);
+        }
+      });
+    });
+
+    lazyImages.forEach(function(lazyImage) {
+      lazyImageObserver.observe(lazyImage);
+    });
+  } else {
+    //console.log('done messed up!');
+    let lazyImages = [].slice.call(document.querySelectorAll('img.lazy'));
+    let active = false;
+
+    const lazyLoad = function() {
+      if (active === false) {
+        active = true;
+
+        setTimeout(function() {
+          lazyImages.forEach(function(lazyImage) {
+            if (
+              lazyImage.getBoundingClientRect().top <= window.innerHeight &&
+              lazyImage.getBoundingClientRect().bottom >= 0 &&
+              getComputedStyle(lazyImage).display !== 'none'
+            ) {
+              lazyImage.src = lazyImage.dataset.src;
+              lazyImage.srcset = lazyImage.dataset.srcset;
+              lazyImage.classList.remove('lazy');
+
+              lazyImages = lazyImages.filter(function(image) {
+                return image !== lazyImage;
+              });
+
+              if (lazyImages.length === 0) {
+                document.removeEventListener('scroll', lazyLoad);
+                window.removeEventListener('resize', lazyLoad);
+                window.removeEventListener('orientationchange', lazyLoad);
+              }
+            }
+          });
+
+          active = false;
+        }, 200);
+      }
+    };
+
+    document.addEventListener('scroll', lazyLoad);
+    window.addEventListener('resize', lazyLoad);
+    window.addEventListener('orientationchange', lazyLoad);
+  }
+});
+///
+/// time.js
+///
+
+/// This is to get the time of day and then do stuff
+/// Mostly the idea is to change the background color
+/// based on the time.
+
+// get the time
+function getHours() {
+  const d = new Date();
+  const offset = d.getTimezoneOffset() / 60;
+  //console.log(offset);
+  let h = d.getUTCHours() - offset;
+  let absoluteFix = Math.abs(h);
+  h = h - absoluteFix;
+  return absoluteFix;
+}
+
+const bgPairs = [
+  {
+    start: [
+      '#333',
+      '#a49444',
+      '#567',
+      '#789',
+      '#ABC',
+      '#AF0',
+      '#333',
+      '#1AC',
+      '#567',
+      '#7D9',
+      '#AFC',
+      '#a979ca',
+      '#3D3',
+      '#4A4',
+      '#537',
+      '#cff',
+      '#A1C',
+      '#9F0',
+      '#333',
+      '#444',
+      '#5A7',
+      '#7E9',
+      '#1B2',
+      '#4D0',
+    ],
+    end: [
+      '#abc',
+      '#bcd',
+      '#ef1',
+      '#123',
+      '#456',
+      '#789',
+      '#012',
+      '#c1e',
+      '#abc',
+      '#a3f2f3',
+      '#1fe',
+      '#123',
+      '#456',
+      '#28b',
+      '#012',
+      '#c1e',
+      '#bcd',
+      '#edc00b',
+      '#123',
+      '#456',
+      '#789',
+      '#012',
+      '#c1e',
+      '#123',
+    ],
+  },
+];
+
+// Use HSLA values instead of HEX...
+// const hslaPairs = [
+//   {
+
+//   }
+// ];
+
+// Now set them to the hour:
+const theHour = getHours();
+//console.log(theHour);
+const start = bgPairs[0].start[theHour];
+const end = bgPairs[0].end[theHour];
+
+function makeRandomNumber(min, max) {
+  min = Math.ceil(min);
+  max = Math.ceil(max);
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
+// function walk(angle) {
+//     angle = Math.Random(180 - theHour);
+//     return angle;
+//     console.log(angle);
+// }
+
+const theAngle = makeRandomNumber(0, 360);
+const thePercentage = makeRandomNumber(0, 100);
+const angle = theAngle - theHour; // Hue
+const saturation = thePercentage - theHour; // Saturation
+const lightness = thePercentage - theHour; // Lightness
+const alpha = makeRandomNumber(0, 1); // Alpha
+const position = 100 - theHour;
+const container = document.querySelector('body');
+
+// function setTheGradient() {
+//   container.style.backgroundImage =
+//     'linear-gradient(82deg, hsla(0, 5%, 5%, 0.75) 0%, hsla(0, 0%, 100%, 0.25)), linear-gradient(90deg,' +
+//     start +
+//     ',' +
+//     end +
+//     ')';
+// }
+
+function setTheGradientHSLA() {
+  container.style.background = `
+  linear-gradient(${angle}deg, hsla(${angle}, ${saturation}%, ${lightness}%, ${alpha}), hsla(0, 0%, 100%, 0.25)  ${position}%),
+  linear-gradient(90deg, hsla(${angle}, 85%, 50%, 0.15), hsla(180, 5%, 12%, 0.2) ${position -
+    30}%),
+  linear-gradient(0, hsla(212, 76%, 10%), hsla(200, 50%, 5%) 20%)
+  `;
+  console.log(`${position}, ${theAngle}`);
+}
+
+setTheGradientHSLA();
+
+///
+/// end time.js
+///
+///
+/// Ajaxy Load the sprite
+///
+
+const spritePath = '/images/socialMediaSprite.svg';
+const nav = document.querySelector('.site-header__siteNavigation');
+const div = document.createElement('div');
+const ajax = new XMLHttpRequest();
+ajax.open('GET', spritePath, true);
+ajax.send();
+ajax.onload = function(e) {
+  div.setAttribute('class', 'site-header__siteNavigation--social-svg');
+  div.innerHTML = ajax.responseText;
+  nav.insertBefore(div, nav.childNodes[0]);
+};

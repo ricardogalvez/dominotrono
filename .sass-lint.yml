@@ -28,8 +28,7 @@ rules:
     - convention: hyphenatedbem
   indentation:
     - 1
-    -
-      size: 2
+    - size: 2
   leading-zero:
     - 1
     - include: true
@@ -56,6 +55,10 @@ rules:
         - vh
         - em
         - ex
+        - s
+        - ms
+        - vmax
+        - vmin
       per-property:
         line-height: []
         margin:

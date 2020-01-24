@@ -7,7 +7,7 @@ tags: []
 title: "Library Life"
 ---
 ## A list of the things I've accomplished and worked on at NYPL
-I've been at the library for 3 years. I've worked on number of projects from concept to production. Simple drawings, through wireframing to finished designs and functional code.
+I was at the library for 3 years. I've worked on number of projects from concept to production. Simple drawings, through wireframing to finished designs and functional code.
 
 
 * Collaborated w/ Second Storey on design concepts and implementation
@@ -30,4 +30,4 @@ I've been at the library for 3 years. I've worked on number of projects from con
   * designing in code
   * use of git to version design
 * Vetting design & UX assumptions with wireframe prototypes
-*
+

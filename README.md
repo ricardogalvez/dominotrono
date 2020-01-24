@@ -1,4 +1,3 @@
-# dominotrono
-towards a new bullet proof toupee... again
+# The personal / professional website of Ricardo E. Galvez
 
-Nothing to see here...
+Built with static site generator Hugo, SASS, and vanilla Javascript

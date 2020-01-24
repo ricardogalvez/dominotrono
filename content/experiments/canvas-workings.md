@@ -1,7 +1,7 @@
 ---
 title: "Canvas Workings"
 date: 2018-01-21T14:59:48-05:00
-draft: false
+draft: true
 categories: "experiments"
 author: Ricardo G.
 tags: ["canvas", "javascript"]

@@ -1,0 +1,295 @@
+///
+/// Grid Settings Y Styles
+///
+
+//
+// TODO: this entire partial needs cleaning up...
+// * look at utilizing the new grid mixin
+// * look to using [named] grid definitions instead of numbered... just might be easier to use
+
+///
+/// Header
+///
+
+/// Some Common Variables that should be moved to a separate file, possibly the _functions mixin...
+/// Desktop view ports
+
+$tablet-column: 15vw;
+$desktop-column: 25vw;
+$left-column: 15vw;
+$mobile-first-row: 15vh;
+$mobile-second-row: 15vh;
+
+.site-header {
+  @include media('>=phone') {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+  @include media('>=tablet') {
+    display: block;
+  }
+
+  &__siteNameContainer,
+  &__siteNavigation {
+    // set up the grids for the breakpoints... really need to make this a mixin or function
+    // function take named media q. as args
+    // take number after each as arg of number of frs to output
+
+    @include media('>=phone') {
+      grid-template-columns: 1fr;
+      grid-template-rows: minmax(3.2em, 4em);
+    }
+
+    @include media('>=tablet') {
+      grid-template-columns: $left-column repeat(4, 1fr);
+      grid-template-rows: 8em;
+    }
+
+    // @include media('>=desktop') {
+    //   grid-template-columns: $left-column 1fr 1fr 1fr;
+    //   grid-template-rows: 10em;
+    // }
+  }
+
+  &__siteNameContainer {
+    @include media('>=phone') {
+      display: block;
+      flex: 2 1 95%;
+      padding-top: 1.8em;
+    }
+
+    @include media('>=tablet') {
+      display: grid;
+      padding-top: 0;
+    }
+
+    &--name {
+      @include media('>=phone') {
+        grid-column: 1 / 1;
+      }
+
+      @include media('>=tablet') {
+        grid-column: 1 / 4;
+        padding-left: 1.5vw;
+        //padding: 0.5em 0 3vw 0.65em;
+      }
+    }
+  }
+
+  //
+  // Sets up the grid and layout ONLY for the nav...
+  //
+  &__siteNavigation {
+    @include media('>=phone') {
+      flex: 1 1 5%;
+    }
+
+    @include media('>=tablet') {
+      display: grid;
+      padding: 0.75vw 0;
+    }
+
+    &--items {
+      @include media('>=phone') {
+        grid-column: 1;
+      }
+
+      @include media('>=tablet') {
+        grid-column: 2 / 4;
+      }
+
+      @include media('>=desktop') {
+        grid-column: 2 / 4;
+      }
+    }
+
+    grid-template-rows: initial;
+    padding: 0;
+  }
+}
+
+//
+// Grid Wrapper(s)
+//
+
+// Only for the home page,
+// TODO make a grid directory and move all grids into their own sub partials...
+// TODO, this could be done a bit more elegant:
+.home-page {
+  .grid-wrapper {
+    @include media('>=phone') {
+      padding: 0;
+    }
+
+    grid-template-rows: [nameBox] minmax(15.5em, 15vh) auto;
+  }
+}
+
+.grid-wrapper {
+  @include media('>=phone') {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    padding: 0 6vw;
+  }
+
+  @include media('>=tablet') {
+    grid-template-columns: minmax(1em, $tablet-column) repeat(3, 1fr);
+    padding: 0 1em 0 0;
+  }
+
+  @include media('>=desktop') {
+    grid-template-columns: $left-column repeat(3, 1fr);
+    padding-right: 4em;
+  }
+
+  display: grid;
+
+  //
+  // Containing our fancy svg graphic on the home page
+  //
+  .prime-box {
+    @include media('>=phone') {
+      grid-column: 1 / 1;
+      grid-row: 1 /1;
+
+      // svg {
+      //   opacity: 0.45;
+      // }
+    }
+
+    @include media('>=tablet') {
+      grid-column: 1 / 5;
+      grid-row: 1 / 1;
+    }
+
+    @include media('>=desktop') {
+      grid-row: nameBox;
+    }
+
+    svg {
+      filter: opacity(0.4);
+      // position: fixed;
+      z-index: -1;
+      // fill: $site-white;
+      // filter {
+      //   flood-color: $site-white;
+      // }
+      // height: auto;
+      // padding: 1em;
+      // width: 100%;
+    }
+  } // prime box
+
+  .subtitle-grid-container {
+    @include media('>=phone') {
+      grid-column: 1 / 1;
+      grid-row: 2 / 2;
+    }
+
+    @include media('>=tablet') {
+      grid-column: 3 / 5;
+      grid-row: 1 / 1;
+    }
+  } // ./subtitle grid container
+
+  &__listParent,
+  &__portfolioParent {
+    @include media('>=phone') {
+      grid-column: 1 / 1;
+      grid-row: 2 / 2;
+    }
+
+    @include media('>=tablet') {
+      grid-column: 2 / 5;
+      grid-row: 1 / 1;
+    }
+
+    //  @include media('>=desktop') {
+    //   grid-column: 2 / 4;
+    //   grid-row: 1 / 1;
+    //  }
+
+    &--portfolio-list {
+      @include media('>=phone') {
+        grid-column: 1;
+      }
+
+      @include media('>=tablet') {
+        grid-column: 2 / 5;
+      }
+
+      padding: 0;
+      margin: 0;
+    }
+
+    // &--portfolio-item {
+    // }
+  }
+  // /__listParent
+
+  .mast-head {
+    @include media('>=phone') {
+      grid-column: 1 / 1;
+    }
+
+    @include media('>=tablet') {
+      grid-column: 1 / 5;
+    }
+
+    grid-row: 3 / 4;
+  } // /__masthead
+
+  @include media('>=phone') {
+    .grid-site-data {
+      background-color: $site-background-color;
+      grid-column: 1 / 1;
+      grid-row: 11 / 12;
+    }
+  } // / phone breakpoint
+
+  h1 {
+    @include add-to-grid('>=phone', 2, 5, 1, 2);
+    @include add-to-grid('>=tablet', 2, 5, 1, 2);
+    // padding: 0 0 0 2.25vw;
+  }
+}
+
+.portfolio-flex,
+.portfolio-grid {
+  // TODO: rename the above class to something more meaningful and specific to the home page portfolio...
+
+  // The Big R at the top of the home page
+  svg {
+    height: 0;
+    width: 0;
+
+    .a {
+      fill: rgb(39, 169, 225);
+    }
+
+    .b {
+      fill: hsl(300, 100%, 50%);
+    }
+
+    .c {
+      fill: hsl(153, 68%, 42%);
+    }
+
+    .d {
+      fill: hsl(274, 53%, 37%);
+    }
+
+    .e {
+      fill: hsl(302, 58%, 36%);
+    }
+
+    .f {
+      fill: hsl(204, 100%, 37%);
+    }
+
+    .g {
+      fill: hsl(300, 100%, 50%);
+    }
+  }
+}

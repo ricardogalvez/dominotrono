@@ -1,0 +1,61 @@
+<!-- portfolio_involvement.html -->
+{{ $newLayout := .Params.newLayout }}
+{{ $role := .Params.projectRoles }}
+{{ $url := .Params.externalURL }}
+{{ $clients := .Params.projectClients }}
+{{ $date := .Params.projectDate }}
+{{ $credits := .Params.projectCredits }}
+{{ $tags := .Params.tags }}
+{{ $atWrapper := "article-grid-wrapper"}}
+{{ $sgWrapper := "section-grid-wrapper"}}
+{{ $imgWrapper := "grid-wrapper" }}
+<aside class="{{ if ( $newLayout )}}{{ $atWrapper }}{{ else }}{{ $imgWrapper }}{{ end }}__portfolioInvolvement">
+  {{ if and ( $url ) ( ne $url "" )}}
+  <h3>Site</h3>
+  <ul>
+    <li><a href="{{ $url }}">{{ $url }}</a></li>
+  </ul>
+  {{ end }}
+  {{ if and ( $role ) ( ne $role "" ) }}
+  <h3>Involvement</h3>
+  <ul>
+    {{ range $role }}
+    <li>{{ . }}</li>
+    {{ end }}
+  </ul>
+  {{ end }}
+  {{ if and ( $clients ) ( ne $clients "" ) }}
+  <h3>Client:</h3>
+  <ul>
+    {{ range $clients }}
+    <li>{{ . }}</li>
+    {{ end }}
+  </ul>
+  {{ end }}
+  {{ if and ( $date ) ( ne $date "" ) }}
+  <h3>Date:</h3>
+  <p>{{ $date }}</p>
+  {{ end }}
+  {{ if and ( $credits ) ( ne $credits "" ) }}
+  <h3>Collaborators:</h3>
+  <ul>
+    {{ range $credits }}
+    <li>
+      {{ . }}
+    </li>
+    {{ end }}
+  </ul>
+  {{ end }}
+  {{ if .Site.IsServer }}
+  {{ if and ( $tags ) ( ne $tags "" ) }}
+  <h3>Filed under:</h3>
+  <ul id="tags" class="site-tags">
+    {{ range $tags }}
+    <li class="site-tags__tag">
+      <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+    </li>
+    {{ end }}
+  </ul>
+  {{ end }}
+  {{ end }}
+</aside>

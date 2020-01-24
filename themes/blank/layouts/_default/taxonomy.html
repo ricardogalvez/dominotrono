@@ -1,11 +1,11 @@
 {{ partial "header.html" . }}
-<main>
+<main class="dynamic-class">
   <div>
-   <h1>{{ .Title }}</h1>
-   <!-- ranges through each of the content files associated with a particular taxonomy term and renders the summary.html content view -->
+    <h1>{{ .Title }}</h1>
+    <!-- ranges through each of the content files associated with a particular taxonomy term and renders the summary.html content view -->
     {{ range .Pages }}
-        {{ .Render "summary"}}
-        -- taxonomy template --
+    {{ .Render "summary"}}
+    -- taxonomy template --
     {{ end }}
   </div>
 </main>

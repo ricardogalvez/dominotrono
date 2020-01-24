@@ -1,19 +1,17 @@
-	<aside class="aSidebarPrime">
-		<div>
-
-				<h3 class="aSidebarPrime__sidebarTitle">LATEST POSTS</h3>
-				<ul class="aSidebarPrime__sidebarList">
-					{{ range .Site.Pages }}
-						{{ .Render "post-grid" }}
-					{{ end }}
-				</ul>
-
-				<h3 class="aSidebarPrime__sidebarTitle">Categories</h3>
-				<ul class="aSidebarPrime__sidebarTags">
-  				{{ range ($.Site.GetPage "taxonomyTerm" "categories").Pages }}
-   					<li><a href="{{ .Permalink }}">{{ .Title}}</a></li>
-  				{{ end }}
-				</ul>
-
-		</div>
-	</aside>
+<aside class="sidebar-prime">
+  <div class="sidebar-prime__inner">
+    <h3 class="sidebar-prime__sidebarTitle">Etcetera</h3>
+    <span class="sidebar-prime__sidebarSubTitle">A feed of all published work on this site.</span>
+    <ul class="sidebar-prime__sidebarList">
+      {{ $posts := ($.Site.GetPage "Type" "posts") }}
+      {{ $portfolio := ($.Site.GetPage "Type" "portfolio") }}
+      {{ $experiments := ($.Site.GetPage "Type" "experiments") }}
+      {{ $groups := slice $posts $portfolio $experiments }}
+      {{ range $groups }}
+      {{ range .Pages }}
+      {{ .Render "post-grid" }}
+      {{ end }}
+      {{ end }}
+    </ul>
+  </div>
+</aside>

@@ -1,0 +1,91 @@
+///
+/// Skills Section
+///
+
+.biography-skills {
+  @include media('>=phone') {
+    padding: 4ex 6vw;
+  }
+
+  @include media('>=tablet') {
+    padding: 8ex 8vw 8ex 1.5vw;
+  }
+
+  @include responsive-font(2vw, 18px, 1em, 48px);
+  border-bottom: 0;
+  font-family: $sans-serif;
+  grid-column: 1 / 5;
+  grid-row: 5 / 6;
+
+  h3 {
+    @include responsive-font(3.75vw, 2.25rem, 5.5rem, 32px);
+
+    @include media('>=phone') {
+      margin-bottom: 2ex;
+    }
+
+    @include media('>=tablet') {
+      margin: 0;
+    }
+  }
+
+  /// TODO: there has to be a better way to do this ↓
+  /// Refactor!
+  & > ul * {
+    margin: 0;
+    padding: 0;
+  }
+
+  & > ul {
+    @include media('>=phone') {
+      flex-direction: column;
+    }
+
+    @include media('>=tablet') {
+      align-content: space-around;
+      flex-direction: row;
+    }
+
+    display: flex;
+    justify-content: space-between;
+    margin-left: 0;
+    padding-left: 0;
+    flex-wrap: wrap;
+
+    > li {
+      @include media('>=phone') {
+        margin-bottom: 1em;
+        margin-right: 1em;
+      }
+
+      @include media('>=tablet') {
+        margin: 0;
+      }
+
+      border-top: 3px solid $site-white;
+      display: block;
+
+      > ul > li {
+        margin: 0.45em 0;
+
+        > a {
+          text-decoration: none;
+          border-bottom: 2px solid $site-white;
+        }
+      }
+    }
+  }
+
+  p {
+    font-size: 1.8rem;
+    margin: 3ex 0 0;
+  }
+}
+
+.fonts-loaded {
+  .site-content {
+    .biography-skills {
+      font-family: $frank-new;
+    }
+  }
+}

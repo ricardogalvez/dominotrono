@@ -1,14 +1,16 @@
-<!-- ++ default portfolio list template ++ -->
+{{ printf "<!-- portfolio list template new Card template aqui  -->" | safeHTML }}
+
 {{ partial "header.html" . }}
 <main>
-  <div class="grid-wrapper portfolioWrapper">
-    <ul class="grid-wrapper__listParent portfolioWrapper__list-parent">{{ $paginator := .Paginate (where .Data.Pages "Type" "portfolio") }}
-    {{ range $paginator.Pages }}
-    {{ partial "portfolio_hero.html" . }}
-    {{ end }}
+  <div class="grid-wrapper">
+    <ul class="grid-wrapper__listParent--portfolio-list">
+      {{ $paginator := .Paginate (where .Data.Pages "Type" "portfolio") 20 }}
+      {{ range $paginator.Pages }}
+      {{ partial "portfolio_hero" . }}
+      {{ end }}
     </ul>
   </div>
-<!-- {{ partial "pagination.html" . }} -->
+  <!-- {{ partial "pagination.html" . }} -->
 </main>
 {{ partial "sidebar.html" . }}
 {{ partial "footer.html" . }}

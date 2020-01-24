@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" aria-hidden="true" viewBox="0 0 500 500">
+    <defs>
+        <style>
+            .a { fill: #22b573; }
+        </style>
+    </defs>
+    <title>
+        two_squares
+    </title>
+    <rect width="250" height="250" class="a"/>
+    <rect width="250" height="250" x="250" y="250" class="a"/>
+</svg>

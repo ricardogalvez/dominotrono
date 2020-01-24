@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid meet" viewBox="0 0 500 500">
+    <title>
+        squares_circles
+    </title>
+    <rect width="250" height="250" class="a"/>
+    <rect width="250" height="250" x="250" y="250" class="a"/>
+    <circle cx="375" cy="125" r="75" class="a"/>
+    <circle cx="125" cy="375" r="75" class="a"/>
+</svg>

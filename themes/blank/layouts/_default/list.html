@@ -1,16 +1,15 @@
-
 <!-- ++ default list template ++ -->
 
 {{ partial "header.html" . }}
-	<main>
-		<div class="grid-wrapper">
-			<div class="grid-wrapper__listParent">{{ $paginator := .Paginate (where .Data.Pages "Type" "posts") }}
-		{{ range $paginator.Pages }}
-			{{ partial "summary.html" . }}
-		{{ end }}
-		</div>
-	</div>
-		<!-- {{ partial "pagination.html" . }} -->
-	</main>
+<main class="posts">
+  <div class="grid-wrapper">
+    <div class="grid-wrapper__listParent">{{ $paginator := .Paginate (where .Data.Pages "Type" "posts") }}
+      {{ range $paginator.Pages }}
+      {{ partial "summary.html" . }}
+      {{ end }}
+    </div>
+  </div>
+  <!-- {{ partial "pagination.html" . }} -->
+</main>
 {{ partial "sidebar.html" . }}
 {{ partial "footer.html" . }}

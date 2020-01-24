@@ -1,0 +1,74 @@
+//
+// Make grids easier to utilize
+// ex: @include add-to-grid() {}
+//
+@mixin add-to-grid(
+  $breakpoint: '',
+  $col-start: '',
+  $col-end: '',
+  $row-start: '',
+  $row-end: ''
+) {
+  @include media(#{$breakpoint}) {
+    grid-column: #{$col-start} / #{$col-end};
+    grid-row: #{$row-start} / #{$row-end};
+  }
+  @content;
+}
+
+// mixin that makes the grids and the breakpoints
+// TODO: move to the functions partial...
+// @param {string} : the breakpoint we use
+// @param {string} : $columns ~ the columns we use
+// @param {number} : $rows ~ the rows used
+// @param {number} : $row-gap ~ row
+// @param {number} : $column-gap ~ the column gap
+
+@mixin portfolio-grid(
+  $breakpoint: '>=phone',
+  $columns: null,
+  $rows: null,
+  $row-gap: null,
+  $column-gap: null
+) {
+  @if $breakpoint == '>=phone' {
+    @include media(#{$breakpoint}) {
+      grid-template-columns: $columns;
+      grid-template-rows: $rows;
+      column-gap: $column-gap;
+      row-gap: $row-gap;
+    }
+  } @else if $breakpoint == '>=tablet' {
+    @include media(#{$breakpoint}) {
+      grid-template-columns: $columns;
+      grid-template-rows: $rows;
+      column-gap: $column-gap;
+      row-gap: $row-gap;
+    }
+  }
+}
+
+@mixin grid-figcaption {
+  > figcaption {
+    @include media('>=phone') {
+      background-color: transparentize($site-dark-blue, 0.2);
+      top: -1.5em;
+      right: -3em;
+      position: relative;
+      width: 90%;
+    }
+
+    font-style: italic;
+    padding: 2ex;
+  }
+}
+
+@mixin two-by-two($left: false, $right: false) {
+  @if $left == true {
+    background-color: $site-acid-green;
+    @content;
+  } @else if $right == true {
+    background-color: $site-punk-pink;
+    @content;
+  }
+}

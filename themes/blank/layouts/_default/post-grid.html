@@ -4,4 +4,15 @@ keep the link
 but only print the first letter of each title
 
 -->
-<li><a href="{{ .Permalink }}">{{ slicestr ($.Title) 0 1 }}</a></li>
+{{- $firstLetter :=  slicestr ($.Title) 0 1 -}}
+{{- $secondLetter :=  slicestr ($.Title) 1 2 -}}
+{{ $ariaId := replaceRE "(\\s)" "" .Title}}
+<li>
+  <ul class="post-grid {{ $firstLetter }}">
+    <li class="drop-cap">
+      <a href="{{ .Permalink }}" aria-labelledby="{{ $ariaId }}">{{ $firstLetter }}<span class="small-letter">{{ $secondLetter }}</span></a>
+    </li>
+    <li class="full-title" id="{{ $ariaId }}">{{ .Title }}</li>
+    <li data-date="{{ .Date }}">{{ .Date.Format "Monday, January 2, 2006" }}</li>
+  </ul>
+</li>

@@ -1,0 +1,16 @@
+//
+// Footer
+// to its own partial
+//
+
+.site-footer {
+  background: darken($site-background-color, 0.9);
+  max-height: 15vh;
+  min-height: 7.5vh;
+  padding-top: 1ex;
+
+  &__siteCredit {
+    font-size: $base-font-small;
+    margin: 0;
+  }
+}

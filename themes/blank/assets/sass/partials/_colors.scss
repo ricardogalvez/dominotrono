@@ -1,0 +1,98 @@
+///
+/// Colors
+///
+
+$site-dark-blue: hsl(212, 76%, 10%);
+$site-green-blue: hsl(203, 39%, 48%);
+$site-white: hsl(0, 0%, 100%);
+$site-punk-pink: hsl(324, 90%, 61%);
+$site-hot-orange: hsl(7, 85%, 64%);
+$site-lava-orange: hsl(15, 93%, 56%);
+$site-acid-green: hsl(75, 100%, 52%);
+$site-black: #111111;
+$site-purple: hsl(286, 96%, 55%);
+$site-red: hsl(345, 100%, 40%);
+$site-brown: hsl(25, 80%, 10%);
+$site-canary-yellow: hsl(50, 100%, 70%);
+
+///
+/// further abstract away the site's colors so we can do work on them:
+///
+$site-focus-ring: $site-lava-orange;
+$site-main-text-color: $site-black;
+$site-background-color: $site-dark-blue;
+$site-link: $site-white;
+$site-link-visited: darken($site-white, 3%);
+$site-link-hover-bg: $site-acid-green;
+$site-link-active-bg: $site-green-blue;
+
+///
+/// per screen size bg colors
+///
+
+$small-bg-color: lighten($site-background-color, 1%);
+$medium-bg-color: lighten($site-background-color, 5%);
+$large-bg-color: lighten($site-background-color, 8.5%);
+
+/// Colors that have transparency by virtue of hsla vs. sass doing that work for us
+$site-transparent-black: hsla(0, 5%, 5%, 0.15);
+$site-transparent-bg: transparentize($site-background-color, 0.6);
+
+// take each color from above and create a global class by that name:
+// ex output would be: .site-color--green-blue;
+
+$site-colors: (
+  dark-blue: $site-dark-blue,
+  green-blue: $site-green-blue,
+  white: $site-white,
+  punk-pink: $site-punk-pink,
+  hot-orange: $site-hot-orange,
+  lava-orange: $site-lava-orange,
+  acid-green: $site-acid-green,
+  black: $site-black,
+  purple: $site-purple,
+  red: $site-red,
+  brown: $site-brown,
+  yellow: $site-canary-yellow
+);
+
+@each $site-color-name, $site-color in $site-colors {
+  .site-color--#{$site-color-name} {
+    background: $site-color;
+
+    figcaption {
+      box-shadow: 10px 10px 0 $site-color;
+    }
+  }
+}
+
+///
+/// Some Gradients we use:
+///
+@mixin purple-gradient {
+  //background-color: hsla(202, 95%, 25%, 0.5);
+  background-image: -webkit-linear-gradient(
+    0,
+    hsla(202, 95%, 25%, 0.25) 0%,
+    hsla(216, 100%, 15%, 0.5) 69%,
+    hsla(0, 0%, 100%, 0) 100%
+  );
+  background-image: -moz-linear-gradient(
+    0,
+    hsla(202, 95%, 25%, 0.25) 0%,
+    hsla(216, 100%, 15%, 0.5) 69%,
+    hsla(0, 0%, 100%, 0) 100%
+  );
+  background-image: -o-linear-gradient(
+    0,
+    hsla(202, 95%, 25%, 0.25) 0%,
+    hsla(216, 100%, 15%, 0.5) 69%,
+    hsla(0, 0%, 100%, 0) 100%
+  );
+  background-image: linear-gradient(
+    0,
+    hsla(202, 95%, 25%, 0.25) 0%,
+    hsla(216, 100%, 15%, 0.5) 69%,
+    hsla(0, 0%, 100%, 0) 100%
+  );
+}

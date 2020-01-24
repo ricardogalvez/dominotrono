@@ -1,23 +1,26 @@
+{{ printf "<!-- +++ default single item  -->" | safeHTML }}
 {{ partial "header.html" . }}
-	<main>
-		<div class="grid-wrapper">
-			<div class="grid-wrapper__listParent">
-				<article class="site-article">
-					<h1>{{ .Title }}</h1>
-					<p class="siteAuthor">by: {{ .Site.Params.author }}</p>
-					<time>{{ .Date.Format "01.02.2006 15:04" }}</time>
-					<div class="siteSingle__content">
-						{{ .Content }}
-					</div>
-				</article>
-				<ul id="tags" class="site-tags">
-					{{ range .Params.tags }}
-					<li class="site-tags__tag">
-						<a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> </li>
-					{{ end }}
-				</ul>
-			</div>	
-		</div>
-	</main>
+<main>
+  <div class="grid-wrapper">
+    <div class="grid-wrapper__listParent">
+      <article class="site-article">
+        <h1>{{ .Title }}</h1>
+        {{ if ne .Section "portfolio" }}
+        <p class="siteAuthor">by: {{ .Site.Params.author }}</p>
+        <time>{{ .Date.Format "01.02.2006 15:04" }}</time>
+        {{ end }}
+        <div class="site-single__content">
+          {{ .Content }}
+        </div>
+      </article>
+      <ul id="tags" class="site-tags">
+        {{ range .Params.tags }}
+        <li class="site-tags__tag">
+          <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> </li>
+        {{ end }}
+      </ul>
+    </div>
+  </div>
+</main>
 {{ partial "sidebar.html" . }}
 {{ partial "footer.html" . }}

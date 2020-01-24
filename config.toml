@@ -1,64 +1,104 @@
-baseURL = "http://proto.bulletprooftoupee.com/"
+baseURL = "http://ricardogalvez.design/"
 languageCode = "en-us"
-title = "bulletprooftoupee.com"
-theme="blank"
-relativeURLs="true"
-#defaultLayout="posts"
-
-#sectionPagesMenu = "main"
-
-
+title = "ricardogalvez.design"
+theme = "blank"
+relativeURLs = "true"
+enableRobotsTXT = "true"
 
 [params]
-    cdnURL = "http://cdn.bulletprooftoupee.com/"
-    author="Ricardo Eric Galvez"
-    subtitle="Creative Works of Ricardo E. Galvez"
+    author="Ricardo Eric Gálvez"
+    subtitle="Ricardo E. Gálvez"
+    # javascript vendor path
+    vendorPath = "js/vendor/"
     # Image params:
-    postimage1x = ""
-    postimage2x = ""
-    postimage3x = ""
-    postimagealt = ""
+    postImageSqip = ""
+    postImage1x = ""
+    postImage2x = ""
+    postImage3x = ""
+    postImageAlt = ""
     # the figure catption param:
     figcaption = ""
-    # svg clip path classes (for declaring the path and setting a color):
+    # svg source and clip path classes (for declaring the path and setting a color):
+    svgSource = ""
     svgClipObjectClass = ""
     svgColorClass = ""
     # portfolio landing page image param:
+    portfolioHeroSqip = ""
     portfolioHero1x = ""
     portfolioHero2x = ""
     portfolioHero3x = ""
     portfolioHeroAlt = ""
+    [params.twitter]
+        name = "twitter"
+        site = "@rixblargh"
+        title = "Ricardo E. Galvez - Design Technologist"
+        description = "I am a multidisciplinary freelance designer, artist, and, developer. I have many years of experience building websites from the ground up, designing user experiences and application interfaces, based in Brooklyn, New York. Former senior designer at the New York Public Library and WNET / THIRTEEN / PBS New York."
+        card = "summary_large_image"
+        url = "https://twitter.com/rixblargh"
+        iconClass = "twitter"
+    [params.github]
+        name = "github"
+        userName = "@ricardoom"
+        url = "https://github.com/ricardoom"
+    [params.linkedin]
+        name = "linkedin"
+        url = "https://www.linkedin.com/in/ricardogalvez/"
+        iconClass = "linkedin"
+    [params.instagram]
+        name = "instagram"
+        userName = "@rixblargh"
+        url = "https://www.instagram.com/ricardoericgalvez/"
+        iconClass = "instagram"
+    [params.dribbble]
+        name = "dribbble"
+        userName = "@rixblargh"
+        url = "https://dribbble.com/ricardoom"
+        iconClass = "instagram"
+    [params.openGraph]
+        image = "images/twitterCard@2x.jpg"
+    [params.portfolio]
+        projectRoles = []
+        projectClients = []
+        projectDate = ""
+        projectCredits = []
     # some classes we want to expose to hugo:
-    vendorPath = "js/vendor/"
     [params.classes]
         homePage = "home-page"
         innerPage = "inner-page"
+        portfolioPage = "portfolio-page"
+        aboutPage = "about-page"
+        blogPage = "blog-page"
+        experimentsPage = "experiments-page"
     [params.vendors]
         matterJS = "matter/matter.min.js"
-        paperJS = "paper/paper-full.min.js"
+        paperJS = "paper/paper-full.js"
         p5JS = "p5/p5.js"
         svgJS = "svg/svg.min.js"
         threeJS = "three/three.min.js"
+        gsapJS = "gsap/TweenMax.min.js"
+        animeJS = "anime/anime.min.js"
 
 [permalinks]
     post = "/:year/:month/:title/"
 
 [menus]
-    [[menu.main]]
-        identifier = "blog"
-        name = "blog"
-        title = "the blog section"
-        url = "/posts/"
-        weight = 5
-    [[menu.main]]
-        identifier = "experiments"
-        name = "experiments"
-        title = "experiments"
-        url = "/experiments/"
-        weight = -10
+    # [[menu.main]]
+    #     identifier = "blog"
+    #     name = "blog"
+    #     title = "the blog section"
+    #     url = "/posts/"
+    #     weight = 3
+    # [[menu.main]]
+    #     identifier = "experiments"
+    #     name = "experiments"
+    #     title = "experiments"
+    #     url = "/experiments/"
+    #     weight = 2
     [[menu.main]]
         identifier = "portfolio"
         name = "portfolio"
         title = "portfolio"
         url = "/portfolio/"
-        weight = 1
+        weight = -10
+
+[resources]

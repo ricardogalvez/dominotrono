@@ -3,27 +3,23 @@
 <main class="site-content" id="siteContent">
   <div class="grid-wrapper">
     <div class="prime-box">
-      {{ partial "svg/basicR.html" . }}
+
+      {{ partial "svg/oscarLetterings.svg" . }}
+      {{ partial "svg/variableDots.svg" . }}
     </div>
     <div class="subtitle-grid-container">
       {{ with $.Site.Params.subtitle }}
-        <span class="subtitle">{{ . }}</span>
+      <h2 class="subtitle-grid-container__subTitle">{{ . }}</h2>
       {{ end }}
     </div>
-    <ul class="portfolio-flex">
+    <div class="mast-head">
       {{ .Content }}
-        {{ $paginator := .Paginate .Site.RegularPages }}
-          {{ range where $paginator.Pages.ByWeight "Section" "portfolio"}}
-        {{ partial "hp-portfolio.html" . }}
-      {{ end }}
-    </ul>
-    <div class="jumbo-grid-container twitter-hash">
-    {{ partial "jumbo.html" . }}
     </div>
-    
-</div>
-<!-- {{ partial "pagination.html" . }} -->
+    {{ partial "hp-portfolio.html" . }}
+    {{ partial "skills.html" . }}
+  </div>
 </main>
 {{ partial "sidebar.html" . }}
-{{ partial "svg/portfolio_overlay.html" }}
+
 {{ partial "footer.html" . }}
+{{ partial "svg/filter.svg" . }}

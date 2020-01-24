@@ -1,6 +1,8 @@
 <!-- short code for big-blog-image.html -->
 <!-- this kind of sucks but in order to provide low res AND lower pixel density images, this has to accept FOUR versions of the same image... bummer... -->
-{{- $cdn := .Site.Params.cdnURL -}}
+
+<!-- prettier-ignore -->
+
 {{- $class := .Get "class" -}}
 {{- $title := .Get "title" -}}
 {{- $src := .Get "src" -}}
@@ -9,9 +11,7 @@
 {{- $srcsetTwo := .Get "srcsetTwo" -}}
 {{- $srcsetThree := .Get "srcsetThree" -}}
 {{- $srcsetFour := .Get "srcsetFour" -}}
-<!-- set a pixel density here-->
-{{- $px := "640w" -}}
-
+{{ $imgHeading := .Get "imgHeading" }}
 
 <!--
     It might make more sense to hard code the pixel density here rather than having to supply a more verbose one on the blog post level. that being said the latter is i think more flexible b/c it allow the writer (me) to decide which resolution I'm targeting for a given asset...
@@ -20,17 +20,19 @@
 
     or better yet provide an default value that can be overwritten, so a function might be appropriate
 -->
-<figure class="{{ $class }}" title="{{ $title }}">
-    <img
-    srcset="{{ $srcsetOne }}, {{ $srcsetTwo }}, {{ $srcsetThree }}, {{ $srcsetFour }}"
-    src="{{ $src }}" {{ with .Get "alt" }} alt="{{ . }}" {{ else }} alt="an image in the post {{ .Params.Title }}" {{ end }}
-    sizes="(max-width: 20em) 100vw, (max-width: 60em) 85vw, (max-width: 80em) 70vw" />
-        {{ with .Get "figcaption" }}
-        <figcaption>{{ . }}</figcaption>
-        {{ end }}
+{{ if and ( $imgHeading ) ( ne $imgHeading "" ) }}
+<h3>{{ $imgHeading }}</h3>
+{{ end }}
+<figure class="{{ $class }}" {{ if $title }} title="{{ $title }}" {{ end }}>
+  <img srcset="{{ $srcsetOne }},
+  {{ $srcsetTwo }},
+  {{ if and ( $srcsetThree ) ( ne $srcsetThree "" ) }}
+     {{ $srcsetThree }}, 
+  {{ end }}
+  {{ if and ( $srcsetFour  ) ( ne $srcsetFour "" ) }} 
+      {{ $srcsetFour }} {{ end }}"
+   src="{{ $src }}" {{  with .Get "alt" }} alt="{{ . }}" {{ else }} alt="an image in the post {{ .Params.Title }}" {{ end }} sizes="(max-width: 20em) 100vw, (max-width: 60em) 85vw, (max-width: 80em) 70vw" />
+  {{ with .Get "figcaption" }}
+    <figcaption>{{ . }}</figcaption>
+  {{ end }}
 </figure>
-
-
-
-
-

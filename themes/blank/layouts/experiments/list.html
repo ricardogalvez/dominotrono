@@ -1,16 +1,16 @@
 {{ partial "header.html" . }}
-	<main>
-		<div class="grid-wrapper">
-			<div class="grid-wrapper__listParent">
-    <!-- <p>++ experiments list template ++</p> -->
-    <!-- <p>here we have layouts/_default/experiments/list.html</p> -->
-		{{ $paginator := .Paginate (where .Data.Pages "Type" "experiments") }}
-		{{ range $paginator.Pages }}
-			{{ partial "summary.html" . }}
-		{{ end }}
-		</div>
-		<!-- {{ partial "pagination.html" . }} -->
-		</div>
-	</main>
+<main>
+  <div class="grid-wrapper">
+    <div class="grid-wrapper__listParent">
+      <!-- <p>++ experiments list template ++</p> -->
+      <!-- <p>here we have layouts/_default/experiments/list.html</p> -->
+      {{ $paginator := .Paginate (where .Data.Pages "Type" "experiments") }}
+      {{ range $paginator.Pages }}
+      {{ partial "summary.html" . }}
+      {{ end }}
+    </div>
+    <!-- {{ partial "pagination.html" . }} -->
+  </div>
+</main>
 {{ partial "sidebar.html" . }}
 {{ partial "footer.html" . }}

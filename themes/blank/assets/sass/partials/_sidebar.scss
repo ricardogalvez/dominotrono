@@ -1,0 +1,89 @@
+///
+/// A Sidebar Prime
+/// always found at the bottom of the page
+//
+
+.sidebar-prime {
+  background: darken($site-background-color, 0.9);
+  font-family: $frank-new;
+  font-style: normal;
+  font-weight: 400;
+  overflow: auto;
+
+  &__sidebarTitle {
+    @include responsive-font(3.75vw, 2.25rem, 5.5rem, 32px);
+
+    @include media('>tablet') {
+      margin-left: 1.5vw;
+      margin-bottom: 2vh;
+    }
+    margin-left: 3vw;
+  }
+
+  &__sidebarSubTitle {
+    display: block;
+    font-size: 1.8rem;
+    margin-left: 1.5vw;
+  }
+
+  &__sidebarList,
+  &__sidebarTags {
+    list-style: none;
+    padding: 0;
+  }
+
+  &__sidebarList {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 5vmax;
+
+    > li {
+      padding: 1em 0 1em 1em;
+
+      &:nth-of-type(4n) {
+        padding-right: 0;
+
+        ul {
+          padding-right: 1em;
+        }
+      }
+
+      .post-grid {
+        min-height: 13ex;
+        padding: 0;
+
+        .drop-cap {
+          & > a {
+            @include responsive-font(5vw, 2.3rem, 5rem, 22px);
+            border-bottom: solid 0.5rem $site-white;
+            display: block;
+            font-family: $justus-pro;
+            font-weight: 400;
+            font-style: normal;
+            margin-bottom: 0.5ex;
+            text-decoration: none;
+            width: 25%;
+
+            .small-letter {
+              @include responsive-font(2.5vw, 1.24rem, 3rem, 18px);
+            }
+
+            &:visited {
+              background: $large-bg-color;
+              color: currentColor;
+            }
+          }
+        }
+
+        .full-title {
+          @include responsive-font(1.25vw, 0.65em, 1em, 12px);
+        }
+      }
+    }
+
+    > li:hover {
+      background: $site-lava-orange;
+      background: linear-gradient(to bottom right, $site-lava-orange, $site-punk-pink);
+    }
+  }
+}

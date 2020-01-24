@@ -1,0 +1,234 @@
+///
+/// type family
+///
+
+$sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji',
+  'Segoe UI Emoji', 'Segoe UI Symbol';
+
+$serif: 'Liberation Serif', Times, Cambria, Utopia, 'Hoefler Text', 'Nimbus Roman No9 L Regular', 'Times New Roman',
+  serif;
+
+$monospace: 'SFMono-Regular', Consolas, 'Andale Mono WT', 'Andale Mono', 'Lucida Console', 'Lucida Sans Typewriter',
+  'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', 'Nimbus Mono L', Monaco, 'Courier New', Courier,
+  monospace;
+
+$slab-serif: 'Rockwell', 'Rockwell Extra Bold', 'Courier New', Monoco, Courier, monospace;
+
+///
+/// from Adobe Typekit
+/// see FontFace Observer
+///
+
+$frank-new: 'frank-new', $sans-serif;
+$justus-pro: 'justus-pro', $serif;
+
+///
+/// type size
+///
+$base-font-raw: 62.5;
+$base-font: $base-font-raw * 1%;
+$base-font-small: ($base-font * 0.85);
+$base-font-normal: ($base-font * 1.8);
+$base-font-gigantic: ($base-font * 3.5);
+$base-letter-spacing: 0.01;
+
+///
+/// Mixins
+///
+
+///
+/// descender fixing
+///
+
+@mixin descender($descender-bg: '') {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-size: 100% 0.0625em;
+  background-position: center bottom 21%;
+  background-origin: padding-box;
+  //color: $color;
+  padding: 10px 0;
+  text-decoration: none;
+  text-shadow: 3px 0 $descender-bg, 2px 0 $descender-bg, 1px 0 $descender-bg, -1px 0 $descender-bg, -2px 0 $descender-bg,
+    -3px 0 $descender-bg;
+  transition: color 0.1s ease-out;
+}
+
+///
+/// basic <h#> shadow
+///
+
+@each $heading in h1, h2, h3, h4, h5, h6 {
+  #{$heading} {
+    font-family: $serif;
+    font-weight: 200;
+    font-style: normal;
+
+    ///
+    /// Headings that wrap links
+    ///
+
+    a {
+      text-decoration: none;
+      color: currentColor;
+
+      &:visited {
+        color: $site-white;
+      }
+    }
+  }
+
+  .fonts-loaded #{$heading} {
+    font-family: $justus-pro;
+  }
+}
+
+///
+/// Set a base link style here:
+///
+
+a,
+.fonts-loaded a {
+  &:link {
+    color: $site-link;
+    // box-shadow: 0 0 0 0 $site-punk-pink;
+  }
+
+  &:visited {
+    color: $site-link-visited;
+    background: $site-hot-orange;
+  }
+
+  &:hover {
+    // box-shadow: 0 0 0 2px $site-green-blue;
+    color: $site-punk-pink;
+  }
+
+  &:active {
+    background-color: $site-link-active-bg;
+  }
+
+  &:focus {
+    @include focus-ring(outline);
+  }
+}
+
+///
+/// Basic typographic rules
+///
+code {
+  background: transparentize($site-hot-orange, 0.85);
+  border-radius: 0.125em;
+  color: $site-white;
+  font-family: $monospace;
+  font-size: 1.65rem;
+  padding: 0.15em;
+}
+
+// article {
+//   // We want to control overall line length, so we set the width of the container here:
+//   @include media('>phone') {
+//     max-width: 90vw;
+//   }
+
+//   @include media('>tablet') {
+//     max-width: 75vw;
+//   }
+
+//   @include media('>desktop') {
+//     max-width: 65vw;
+//   }
+//   //overflow: auto;
+// }
+
+.siteAuthor {
+  font-size: 1.3rem;
+}
+
+//
+// Type rules for single and portfolio pages:
+// TODO: determine if site-single is used / useful anymore and then do something about it
+//
+.site-single,
+.portfolio {
+  &__content {
+    h2,
+    h3 {
+      margin-bottom: 0.5ex;
+    }
+
+    h2 {
+      font-size: 2.75rem;
+    }
+
+    h3 {
+      font-size: 1.75rem;
+    }
+
+    // set the max width for <p> elements to a reasonable / standard amount of characters
+    p {
+      @include media('>=tablet') {
+        max-width: initial;
+      }
+      @include media('>=tablet') {
+        max-width: 52ch;
+      }
+    }
+
+    p,
+    ul {
+      font-size: 1.8rem;
+      line-height: 1.65;
+    }
+
+    ul {
+      // border-left: 0.25ex solid transparentize($site-white, 0.45);
+      padding-left: 3ex;
+
+      li {
+        //padding-left: 2ex;
+        list-style-type: disc;
+      }
+
+      li ul {
+        border: 0;
+      }
+    }
+    h3 + ul {
+      margin-top: 0.5ex;
+    }
+
+    b,
+    strong {
+      font-weight: 500;
+    }
+
+    figcaption {
+      font-family: $frank-new;
+    }
+  } // /&__content
+} // /.portfolio
+
+.sidebar-prime {
+  font-size: 1.6rem;
+}
+
+//
+// TODO: Refactor this later!
+//
+.fonts-loaded {
+  .site-single,
+  .portfolio {
+    &__content {
+      p {
+        font-family: $frank-new;
+      }
+    }
+  }
+
+  .article-grid-wrapper {
+    &__portfolioInvolvement {
+      font-family: $frank-new;
+    }
+  }
+}

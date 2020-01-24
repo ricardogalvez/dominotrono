@@ -1,21 +1,38 @@
-<li class="portfolio-flex__summary">
-    {{ if and (.Params.postimage1x) (ne .Params.postimage1x "") }}
-  <a href="{{ .Permalink }}">
-  <div class="portfolio-flex__content"> 
-    <figure class="{{ .Params.svgClipObjectClass }} {{ .Params.svgColorClass }} ">
-      <img srcset="{{ .Params.postimage1x }}, {{ .Params.postimage2x }} 2x, {{ .Params.postimage3x }} 3x"
-       sizes="(max-width: 20em) 100vw, (max-width: 50em) 75vw, (max-width: 60em) 65vw"
-      alt="{{ if .Params.postimagealt }} {{ .Params.postimagealt }}
-            {{ else }}
-              {{ .Title }}
-            {{ end }}"
-      class="portfolioCard svgShapeClip"
-      src="{{ .Params.postimage1x }}" />
-      {{ if and (.Params.figcaption) (ne .Params.figcaption "") }}
-      <figcaption>{{ .Params.figcaption }}</figcaption>
-      {{ end }}
-    </figure>
-  </div>
+{{ printf "<!-- home page portfolio block -->" | safeHTML }}
+<div class="portfolio-container">
+  <a href="/portfolio/">
+    <h3>Portfolio</h3>
   </a>
-  {{ end }}
-</li>
+  <span class="portfolio-container__containerSubTitle">Projects past and present</span>
+  <ul class="portfolio-flex">
+    {{ $paginator := .Paginate .Site.RegularPages 20 }}
+    {{ range where $paginator.Pages.ByWeight "Section" "portfolio"}}
+    <li class="portfolio-flex__summary">
+      {{ if and ( .Params.postImage1x ) ( ne .Params.postImage1x "" ) }}
+      {{ $ariaId := replaceRE "(\\s)" "-" .Title }}
+      <a href="{{ .Permalink }}" aria-label="{{ $ariaId }}">
+        <div class="portfolio-flex__content">
+          <figure class="{{ .Params.svgColorClass }}">
+            {{ if and ( .Params.figcaption ) ( ne .Params.figcaption "" ) }}
+
+            {{ else }}
+            <figcaption>{{ .Title }}</figcaption>
+            {{ end }}
+            <img data-srcset="{{ .Params.postImage1x }},
+                   {{ .Params.postImage2x }} 2x, 
+                   {{ .Params.postImage3x }} 3x" sizes="(max-width: 20em) 100vw,
+              (max-width: 50em) 75vw, 
+              (max-width: 60em) 65vw" class="portfolioCard svgShapeClip lazy" src="{{ .Params.postImageSqip }}"
+              data-src="{{ .Params.postImage1x }}" alt="{{ if .Params.postImageAlt }} {{ .Params.postImageAlt }}
+              {{ else }}
+                {{ .Title }}
+              {{ end }}" />
+          </figure>
+        </div>
+      </a>
+      {{ end }}
+      {{ end }}
+    </li>
+  </ul>
+</div>
+{{ printf "<!-- end home page portfolio block -->" | safeHTML }}

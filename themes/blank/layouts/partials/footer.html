@@ -1,7 +1,21 @@
-	<footer class="site-footer">
-		<p class="site-footer__siteCredit">&copy; {{ now.Year }} <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></p>
-	</footer>
-	
-	<script src="{{ .Site.BaseURL }}js/main.js"></script>
+
+{{ $mobileNav := resources.Get "js/mobileNav.js" }}
+{{ $observer := resources.Get "js/observer.js" }}
+{{ $socialSprites := resources.Get "js/sprites.js" }}
+
+<footer class="site-footer">
+  <p class="site-footer__siteCredit">&copy; {{ now.Year }} <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+  </p>
+</footer>
+{{ if .Site.IsServer }}
+{{ $script := slice  $mobileNav $observer $socialSprites | resources.Concat "/js/main.js" }}
+<script src="{{ $script.Permalink }}"></script>
+{{ else }}
+{{ $script := slice  $mobileNav $observer $socialSprites | resources.Concat "/js/main.js" | fingerprint }}
+<script src="{{ $script.Permalink }}"></script>
+
+{{ end }}
+
 </body>
+
 </html>

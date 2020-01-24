@@ -1,0 +1,39 @@
+///
+/// Header
+///
+
+.site-header {
+  &__siteNameContainer {
+    &--name {
+      @include media('>=phone') {
+        margin-left: 3vmin;
+      }
+      @include media('>=tablet') {
+        margin: 0;
+      }
+      @include responsive-font(2.25vw, 24px, 48px, 64px);
+      @include basic-drop-shadow;
+      align-self: end;
+      color: $site-white;
+      font-family: $sans-serif;
+      font-style: normal;
+      font-weight: 200;
+      text-decoration: none;
+
+      &:visited {
+        color: $site-white;
+      }
+    }
+  }
+  background: transparent;
+}
+
+.fonts-loaded {
+  .site-header {
+    &__siteNameContainer {
+      &--name {
+        font-family: $frank-new;
+      }
+    }
+  }
+}

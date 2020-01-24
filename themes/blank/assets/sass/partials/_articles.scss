@@ -1,0 +1,51 @@
+///
+/// Articles. Posts and general page rules
+/// But not typographic...
+///
+
+time {
+  @include media('>=phone') {
+    font-size: 1.3rem;
+    min-width: 5em;
+    position: relative;
+    top: 1em;
+    left: 0;
+  }
+}
+
+.fonts-loaded time {
+  font-family: $frank-new;
+}
+
+.grid-wrapper {
+  &__listParent {
+    &--site-article {
+      @include basic-article-wrapper('>=phone', 95vw, 5vw);
+      @include basic-article-wrapper('>=tablet', 100vw, 0, 6.5vw);
+      @include basic-article-wrapper('>=desktop', 100vw, 0, 0);
+    }
+  }
+}
+
+//
+// Covers the generic article type, but there are content type specific styles below
+//
+// .site-single {
+//   &__content {
+//     &--shortcode-canvas {
+//       border-left: 0.8rem solid $site-punk-pink;
+//     }
+
+//     h3 {
+//       font-size: 2rem;
+//       margin: 1.5ex 0;
+//     }
+//   } //
+// }
+
+[data-vendor],
+[data-date] {
+  font-size: 0.5em;
+  left: 0;
+  top: 0;
+}

@@ -3,8 +3,8 @@ author: Ricardo G.
 categories: []
 date: 2018-02-17T09:07:37-05:00
 draft: false
-postimage: "media/placeHolder_sm.png"
-postimagealt: ""
+postimage: ""
+postImageAlt: ""
 figcaption: ""
 tags: ["javascript" , "gardening" ]
 title: "Dryp: A remote garden manager"
@@ -74,4 +74,4 @@ This project is to fulfill a couple ends. The first is purely for professional d
 * primarily a small screen app,
   - tablet and desktop versions would be cool
 
-{{< figure src="/media/IMG_3997.jpg" title="a manager of gardens" >}}
+<img width="468" height="614" src="/media/IMG_3997.jpg" alt="" style="background-size: cover; background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NjggNjE0Ij48ZmlsdGVyIGlkPSJiIj48ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSIxMiIgLz48L2ZpbHRlcj48cGF0aCBmaWxsPSIjY2ViZWJhIiBkPSJNMCAwaDQ2N3Y2MTRIMHoiLz48ZyBmaWx0ZXI9InVybCgjYikiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEuMiAxLjIpIHNjYWxlKDIuMzk4NDQpIiBmaWxsLW9wYWNpdHk9Ii41Ij48ZWxsaXBzZSBmaWxsPSIjOGE2YTY5IiByeD0iMSIgcnk9IjEiIHRyYW5zZm9ybT0icm90YXRlKDU4LjQgLTcxIDE2NCkgc2NhbGUoOTUuNjA3MzggNDUuMTIxNDcpIi8+PGVsbGlwc2UgZmlsbD0iI2ZmZiIgcng9IjEiIHJ5PSIxIiB0cmFuc2Zvcm09InJvdGF0ZSgtMTYuNSA1MTYuMyA3NC43KSBzY2FsZSgzNC44NTQ1MiAxOTQuMDAwMDEpIi8+PGVsbGlwc2UgZmlsbD0iI2IxM2IxZCIgcng9IjEiIHJ5PSIxIiB0cmFuc2Zvcm09Im1hdHJpeCgtMTQ4LjE1NzIxIC0yLjg0NDc2IC4yNDkxMiAtMTIuOTc0MSA5Ni44IDQuNSkiLz48ZWxsaXBzZSBmaWxsPSIjZmZmIiByeD0iMSIgcnk9IjEiIHRyYW5zZm9ybT0icm90YXRlKC02MS45IDE0MS40IC0xMDEuNykgc2NhbGUoMzIuMjY1NDEgMTAzLjY4NDAzKSIvPjxlbGxpcHNlIGZpbGw9IiNmZmYiIGN4PSIxNjEiIGN5PSIyNDMiIHJ4PSIxNzgiIHJ5PSIyOSIvPjxwYXRoIGZpbGw9IiM1MTQ3NTUiIGQ9Ik02MCAyMjBsLTMwLTEgNjgtODJ6Ii8+PGVsbGlwc2UgZmlsbD0iIzhkNzE2YyIgcng9IjEiIHJ5PSIxIiB0cmFuc2Zvcm09InJvdGF0ZSgtMTQ5LjUgODYuMiA5NS4yKSBzY2FsZSgzMi42MjkzNSAxMi4yNDAwOSkiLz48ZWxsaXBzZSBmaWxsPSIjN2E1NDUzIiByeD0iMSIgcnk9IjEiIHRyYW5zZm9ybT0ibWF0cml4KDIzLjgxNTcyIC0xOS43NzIxOSAxMS4xMzg3OCAxMy40MTY3MyAxODMuMyAxOTMpIi8+PC9nPjwvc3ZnPg==);">

@@ -1,16 +1,16 @@
 <!-- Special template file for the CV screen -->
 <!-- TODO: find a way to use Hugo logic/conditional instead of entire different layout file... -->
 {{ partial "header.html" . }}
-	<main>
-		<div class="grid-wrapper">
-			<div class="grid-wrapper__listParent">
-				<article class="site-article cv-about">
-				<div class="siteSingle__content">
-					{{ .Content }}
-				</div>
-			    </article>
-		    </div>
-		</div>
-	</main>
+<main>
+  <div class="grid-wrapper">
+    <div class="grid-wrapper__listParent">
+      <article class="site-article cv-about">
+        <div class="site-single__content">
+          {{ .Content }}
+        </div>
+      </article>
+    </div>
+  </div>
+</main>
 {{ partial "sidebar.html" . }}
 {{ partial "footer.html" . }}

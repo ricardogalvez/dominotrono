@@ -1,10 +1,14 @@
 ---
 author: Ricardo G.
-categories: ["experiments"]
+categories: ['experiments']
 date: 2018-10-29T15:21:25-04:00
-draft: false
+draft: true
 tags: []
-title: "Having a Good Go"
-vendorJS: "svgJS"
+title: 'Using SVG JS'
+vendorJS: 'svgJS'
 ---
-One must usually put something in here. Or give the content container a min-height... css. insert thinking face emojii.
+
+1. test to see a an SVG JS object.
+2. Did it work? Yes.
+3. Does the strategy for adding the proper external script work as expected? Yes.
+4. Could it be done better. Yes.

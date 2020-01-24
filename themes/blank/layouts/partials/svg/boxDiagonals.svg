@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid meet" viewBox="0 0 500 500">
+    <title>
+        box_diagonals
+    </title>
+    <path d="M0 0h250v250H0zM250 500V250L0 500h250zM250 250h250V0L250 250z"/>
+</svg>

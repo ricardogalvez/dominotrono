@@ -1,0 +1,9 @@
+{{ $github := .Site.Params.github }}
+{{ $linkedin := .Site.Params.linkedin }}
+{{ $twitter := .Site.Params.twitter }}
+<ul class="socialNetwork">
+  <li class="socialNetwork--{{ $github.iconClass }}"><a href="#" target=" _blank">{{ $github.name }}</a></li>
+  <li class="socialNetwork--{{ $twitter.iconClass }}"><a href="#" target=" _blank">{{ $twitter.name }}</a></li>
+  <li class="socialNetwork--{{ $linkedin.iconClass }}"><a href="#" target=" _blank">{{ $linkedin.name }}</a></li>
+
+</ul>

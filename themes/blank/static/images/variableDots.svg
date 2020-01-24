@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="497.5" height="498.5" viewBox="0 0 497.5 498.5">
+  <defs>
+    <style>
+      .a {
+        fill: #9e005d;
+      }
+    </style>
+  </defs>
+  <title>variable_dots</title>
+
+    <circle class="a" cx="145" cy="145" r="145"/>
+    <circle class="a" cx="351.5" cy="352.5" r="146"/>
+    <circle class="a" cx="422.5" cy="73.5" r="73.5"/>
+    <circle class="a" cx="73.5" cy="424.5" r="73.5"/>
+ 
+</svg>

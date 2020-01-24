@@ -1,31 +1,34 @@
-	<article class="siteSummary">
-		<!-- +++ Defualt summary template +++ -->
-			<h1>
-				<a href="{{ .Permalink }}">{{ .Title }}</a>
-			</h1>
-		<time>{{ .Date.Format "02.01.2006 15:04" }}</time>
-		<div class="siteSummary__content">
-			<p class="siteSummary__copy">{{ .Summary }}
-			{{ if .Truncated }}
-				<a href="{{ .Permalink }}">Continue Reading about {{ .Title }}.</a>
-			{{ end }}
-			</p>
-			{{ if and (.Params.postimage) (ne .Params.postimage "") }}
-			<figure>
-				<img src="{{ .Params.postimage }}" alt="{{ .Site.Params.postimagealt }}" />
-				{{ if and (.Params.figcaption) (ne .Params.figcaption "") }}
-				<figcaption>{{ .Params.figcaption }}</figcaption>
-				{{ end }}
-			</figure>
-			{{ end }}
-			{{if and (.Params.tags) (ne .Params.tags "") }}
-			<ul>
-				{{ range .Params.tags }}
-				<li class="siteSummary__tags">
-					<a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
-				</li>
-				{{ end }}
-			</ul>
-			{{ end }}
-		</div>
-	</article>
+{{ printf "<!-- +++ Default summary template +++ -->" | safeHTML }}
+<article class="site-summary">
+
+  <h1>
+    <a href="{{ .Permalink }}">{{ .Title }}</a>
+  </h1>
+  <time>{{ .Date.Format "02.01.2006 15:04" }}</time>
+  <div class="site-summary__content">
+    <p class="site-summary__copy">{{ .Summary }}
+      {{ if .Truncated }}
+      <a href="{{ .Permalink }}">Continue Reading about {{ .Title }}.</a>
+      {{ end }}
+    </p>
+    {{ if and (.Params.postimage) (ne .Params.postimage "") }}
+    <figure>
+      <img src="{{ .Params.postimage }}" alt="{{ .Site.Params.postImageAlt }}" />
+      {{ if and (.Params.figcaption) (ne .Params.figcaption "") }}
+      <figcaption>{{ .Params.figcaption }}</figcaption>
+      {{ end }}
+    </figure>
+    {{ end }}
+    {{ if .Site.IsServer }}
+    {{if and (.Params.tags) (ne .Params.tags "") }}
+    <ul>
+      {{ range .Params.tags }}
+      <li class="site-summary__tags">
+        <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+      </li>
+      {{ end }}
+    </ul>
+    {{ end }}
+    {{ end }}
+  </div>
+</article>

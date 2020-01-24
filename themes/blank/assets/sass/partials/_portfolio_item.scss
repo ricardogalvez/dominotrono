@@ -1,0 +1,263 @@
+///
+/// An Individual Portfolio item: ../portfolio/the-portfolio-item
+///
+
+.grid-wrapper {
+  &__portfolioParent {
+    @include media('>=phone') {
+      display: block;
+    }
+
+    @include media('>=tablet') {
+      display: flex;
+    }
+    //
+    // TODO: Determine if this entire code block is still in use...
+    //
+
+    &--portfolio-item {
+      @include basic-article-wrapper('>=phone', 95vw, 5vw);
+      @include basic-article-wrapper('>=tablet', 100vw, 0, 1.5vw);
+      @include basic-article-wrapper('>=desktop', 100vw, 0, 0);
+      @include media('>=tablet') {
+        flex: 1 0 75%;
+      }
+
+      .portfolio {
+        &__content {
+          .portfolio-image-wrapper {
+            @include media('<=tablet') {
+              display: block;
+            }
+
+            @include media('>=tablet') {
+              display: flex;
+            }
+
+            figcaption {
+              margin: 3ex 1ex;
+            }
+
+            margin: 0.5em 0;
+          }
+
+          h3 {
+            @include responsive-font(1.5vw, 1.6em, 22px, 32px);
+          }
+        } // /__content
+      }
+    }
+  }
+} // /grid-wrapper
+
+.article-grid-wrapper {
+  display: grid;
+  grid-template-columns: 2.5vw 69vw 14.95vw 10vw 2.5vw;
+  grid-template-rows: auto;
+  row-gap: 2ex;
+  h1,
+  time {
+    grid-column: 2 / 4;
+    grid-row: 1 / 2;
+  }
+
+  &__portfolioParent {
+    @include media('>=phone') {
+      // display: block;
+    }
+
+    @include media('>=tablet') {
+      // display: flex;
+    }
+
+    grid-column: 1 / 6;
+    grid-row: 2 / 4;
+
+    //
+    // section headings
+    //
+    h3 {
+      &:first-child {
+        margin-bottom: 2ex;
+      }
+
+      @include responsive-font(1.5vw, 1.6em, 22px, 32px);
+      margin: 4ex 0 0 2.5vw;
+    }
+
+    .portfolio__content {
+      //
+      // uses the same grid styles, but namespaced to differentiate
+      //
+
+      .hero-grid,
+      .details-grid {
+        display: grid;
+      }
+      //  Note:
+      //  should only be used at the top of each portfolio case study.
+      // TODO: explore possible further abstraction / using these values more globally.
+      //
+
+      // hero grid specific variables:
+      $hero-rows-phone: #{minmax(320px, auto) minmax(150px, auto)};
+      $hero-rows-tablet: #{minmax(475px, auto) minmax(150px, auto)};
+      $hero-columns: #{2.5vw 1fr 2.5vw 1fr 2.5vw};
+      //
+
+      .hero-grid {
+        @include portfolio-grid('>=phone', $hero-columns, $hero-rows-phone);
+        @include portfolio-grid('>=tablet', $hero-columns, $hero-rows-tablet);
+
+        &__imageBlock {
+          @include add-to-grid('>=phone', 1, 6, 1, 2) {
+            img {
+              left: -5rem;
+              position: relative;
+              top: 0;
+              width: 180%;
+            }
+          }
+
+          @include add-to-grid('>=tablet', 1, 6, 1, 3) {
+            img {
+              left: 0;
+              width: 100%;
+            }
+          }
+          overflow: hidden;
+        }
+
+        &__copyBlock {
+          @include add-to-grid('>=phone', 1, 6, 2, 3);
+          @include add-to-grid('>=tablet', 2, 6, 2, 3);
+          @include responsive-font(1.8vw, 18px, 32px, 20px);
+          background-color: transparentize($site-dark-blue, 0.1);
+          margin: 0;
+          padding: 3ex;
+          z-index: 1;
+        }
+      } // /.hero-grid
+
+      //
+      // Each lower section wrapper call gets this class
+      // details-grid for secondary and tertiary content layouts
+      // details grid specific variables:
+      $details-grid-columns: #{2.5vw 1fr 6.5vw 1fr 2.5vw};
+      $details-grid-rows: #{minmax(130px, auto) auto};
+      //
+
+      .details-grid {
+        @include portfolio-grid(
+          '>=phone',
+          $details-grid-columns,
+          $details-grid-rows
+        );
+        // align-items: center;
+        margin-top: 2ex;
+
+        > p {
+          margin: 5ex 0 8ex;
+        }
+
+        //
+        // twoByTwo: this layout can be used to stack 3 images to the right or left
+        // with a copy block on the opposite side..
+        &__twoByTwo {
+          &.image-block,
+          &.copy-block {
+            &__left {
+              @include add-to-grid('>=phone', 2, 5, auto, auto);
+              @include add-to-grid('>=tablet', 2, 3, auto, auto);
+            }
+
+            &__right {
+              @include add-to-grid('>=phone', 2, 5, auto, auto);
+              @include add-to-grid('>=tablet', 4, 5, auto, auto);
+            }
+          }
+          &.image-block {
+            &__left,
+            &__right {
+              @include grid-figcaption;
+            }
+          }
+        } // /twoByTwo
+
+        &__twentyWords {
+          &.image-block {
+            &__left {
+              @include add-to-grid('>=phone', 2, 5, 3, 4);
+              @include add-to-grid('>=tablet', 2, 3, 2, 4);
+            }
+
+            &__right {
+              @include add-to-grid('>=phone', 2, 5, 5, 6);
+              @include add-to-grid('>=tablet', 4, 5, 1, 3);
+            }
+          }
+
+          &.copy-block {
+            &__left {
+              @include add-to-grid('>=phone', 2, 5, 1, 2);
+              @include add-to-grid('>=tablet', 2, 3, 1, 2);
+              padding: 0 0 3ex 3ex;
+            }
+
+            &__right {
+              @include add-to-grid('>=phone', 2, 5, 4, 5);
+              @include add-to-grid('>=tablet', 4, 5, 3, 4);
+              margin: 3ex 0 5ex;
+            }
+          }
+          @include grid-figcaption;
+        }
+
+        &__fiftyWords {
+          &.big-image {
+            @include add-to-grid('>=phone', 2, 5, 1, 3);
+            @include add-to-grid('>=tablet', 2, 5, 1, 3);
+            @include grid-figcaption;
+          }
+
+          &.small-image {
+            @include add-to-grid('>=phone', 2, 5, auto, auto);
+            @include add-to-grid('>=tablet', 2, 3, auto, auto);
+            @include grid-figcaption;
+          }
+
+          &.copy-block {
+            @include add-to-grid('>=phone', 2, 5, 4, 6);
+            @include add-to-grid('>=tablet', 4, 5, 3, 5);
+          }
+        }
+
+        &__sectionHeading {
+          @include add-to-grid('>=phone', 2, 6, auto, auto);
+          background-color: $site-hot-orange;
+        }
+      } // /details-grid
+    }
+  }
+
+  &__portfolioInvolvement {
+    @include media('>=phone') {
+      grid-column: 2 / 5;
+      grid-row: 4 / 5;
+      padding: 1ex;
+      width: 100%;
+    }
+
+    @include media('>=tablet') {
+      grid-column: 3 / 5;
+      grid-row: 2 / 3;
+      margin: -4ex 0 0 0;
+      padding: 2.5ex 3.5ex 5ex;
+      // padding: calc(100% - 15vh) calc(100% - 22vw) calc(100% - 13vh);
+      width: initial;
+      z-index: 1;
+    }
+
+    background-color: transparentize($site-dark-blue, 0.1);
+  }
+} // /article-grid-wrapper

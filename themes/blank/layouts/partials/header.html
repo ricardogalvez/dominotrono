@@ -1,33 +1,111 @@
+{{ $targetPath := "css/root.css" }}
+{{ $sassRoot := "sass/root.scss" }}
+{{ $options := ( dict "targetPath" $targetPath "enableSourceMap" true ) }}
+{{ $devStyle := resources.Get $sassRoot | resources.ToCSS $options }}
+{{ $prodStyle := resources.Get $sassRoot | toCSS $options | postCSS | minify | fingerprint }}
+{{ $typeKitLink := "https://use.typekit.net/ybr6uwn.css" }}
+{{ $class := .Site.Params.classes }}
+{{ $navControlIconClose := ( partial "svg/navControlIcon.svg" ) }}
+{{ $navControlIconOpen := ( partial "svg/burgerIcon3d.svg" ) }}
+{{ $ogImage := .Site.Params.openGraph.image }}
+
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode | default "en-us" }}">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>{{ .Title }}</title>
-    {{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
-    {{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
-    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/root.css">
-    {{ if .RSSLink -}}<link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}">{{- end }}
-    {{ .Hugo.Generator }}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="designer" content="Ricardo E. Galvez, {{ .Site.Params.Title }}">
+  <meta name="twitter:site" content="{{ .Site.Params.twitter.site }}">
+  <meta name="twitter:title" content="{{ .Site.Params.twitter.title }}">
+  <meta name="twitter:description" content="{{ .Site.Params.twitter.description }}">
+  <meta name="twitter:card" content="{{ .Site.Params.twitter.card }}">
+  <meta name="twitter:image" content="{{ .Site.BaseURL }}{{ $ogImage }}">
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{{ .Site.BaseURL }}" />
+  <meta property="og:title" content="{{ .Site.Params.twitter.description }}">
+  <meta property="og:description" content="{{ .Site.Params.twitter.description }}">
+  <meta property="og:image" content="{{ .Site.BaseURL }}{{ $ogImage }}">
+  <link rel="icon" href="/images/fourDots_2@2x.jpg">
+  <title>{{ .Title }}</title>
+  {{ with .Site.Params.description }}
+  <meta name="description" content="{{ . }}">{{ end }}
+  {{ with .Site.Params.author }}
+  <meta name="author" content="{{ . }}">{{ end }}
+  {{ if .Site.IsServer }}
+  <link rel="stylesheet" href="{{ $devStyle.Permalink }}">
+  {{ else }}
+  <link rel="stylesheet" href="{{ $prodStyle.Permalink }}">
+  {{ end }}
+  {{ hugo.Generator }}
+  <link rel="stylesheet" href="{{ $typeKitLink }}">
+  <script>
+    var script = document.createElement('script');
+    script.src = '/js/vendor/fontfaceObserver/fontfaceobserver.standalone.js';
+    script.async = true;
+    script.onload = function () {
+      function timeout(time) {
+        return new Promise(function (resolve, reject) {
+          setTimeout(reject, time);
+        });
+      }
+      var justus = new FontFaceObserver('justus-pro');
+      var frank = new FontFaceObserver('frank-new');
+      var html = document.documentElement;
+      Promise.race([justus.load(), frank.load(), timeout(2000)]).then(function () {
+        html.classList.add('fonts-loaded');
+      });
+    };
+    document.head.appendChild(script);
+  </script>
 </head>
 
-{{ $class :=  .Site.Params.classes }}
 
-<body  class="{{ if .IsHome  }}{{ $class.homePage }}{{ else }}{{ $class.innerPage }}{{ end }}">
-
-    <header role="banner" class="siteHeader">
-        <div class="siteHeader__site-name-container">
-            <a href="{{ .Site.BaseURL }}" class="siteHeader__site-name">{{ .Site.Title }}</a>
-        </div>
-        <nav class="siteHeader__site-navigation">
-            <ul>
-                {{ range .Site.Menus.main }}
-                <li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
-                {{ end }}
-            </ul>
-        </nav>
-    </header>
-
-
-
+<body class="{{ if .IsHome }}{{ $class.homePage }}{{ else }}{{ $class.innerPage }}{{ end }}">
+  <header role="banner" class="site-header">
+    <div class="site-header__siteNameContainer">
+      <a href="{{ .Site.BaseURL }}" class="site-header__siteNameContainer--name">{{ .Site.Title }}</a>
+    </div>
+    <nav class="site-header__siteNavigation">
+      <button class="site-header__siteNavigation--button" id="mobileNavButton" aria-labelledby="menuLabel"
+        aria-controls="navItems">
+        <span class="button-icon__open" id="navControlOpen">{{ $navControlIconOpen }}</span>
+        <span class="button-icon__closed" id="navControlClose">{{ $navControlIconClose }}</span>
+        <span class="menu-label" id="menuLabel">Menu</span>
+      </button>
+      <ul id="navItems" class="site-header__siteNavigation--items" aria-expanded="false">
+        {{ range .Site.Menus.main }}
+        <li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+        {{ end }}
+        <li class="social-icon">
+          <a href="{{ .Site.Params.github.url }}" aria-label="{{ .Site.Params.github.name }}" target="_blank">
+            <svg viewBox="197 0 50 51" aria-hidden="true">
+              <use xlink:href="#{{ .Site.Params.github.name }}"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="social-icon">
+          <a href="{{ .Site.Params.twitter.url }}" aria-label="{{ .Site.Params.twitter.name }}" target="_blank">
+            <svg viewBox="0 0 50 51" aria-hidden="true">
+              <use xlink:href="#{{ .Site.Params.twitter.name }}"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="social-icon">
+          <a href="{{ .Site.Params.instagram.url }}" aria-label="{{ .Site.Params.instagram.name }}" target="_blank">
+            <svg viewBox="49 0 50 51" aria-hidden="true">
+              <use xlink:href="#{{ .Site.Params.instagram.name }}"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="social-icon">
+          <a href="{{ .Site.Params.linkedin.url }}" aria-label="{{ .Site.Params.linkedin.name }}" target="_blank">
+            <svg viewBox="98 0 50 51" aria-hidden="true">
+              <use xlink:href="#{{ .Site.Params.linkedin.name }}"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 500 500">
+    <title>
+        fourDots
+    </title>
+    <g>
+        <circle cx="125" cy="125" r="105"/>
+        <circle cx="375" cy="125" r="105"/>
+        <circle cx="125" cy="375" r="105"/>
+        <circle cx="375" cy="375" r="105"/>
+    </g>
+</svg>

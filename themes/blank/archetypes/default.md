@@ -5,5 +5,5 @@ draft: true
 categories: ""
 tags: ""
 postimage: "media/placeHolder_sm.png"
-postimagealt: ""
+postImageAlt: ""
 ---
