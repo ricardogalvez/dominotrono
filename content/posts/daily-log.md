@@ -13,7 +13,7 @@ The idea here is to briefly jot down activities, changes, inquiries, research to
 
 Determined to be a better developer, despite some who question the effort. It is hard to show results when your audience is less than sympathetic and easily baffled, confused and put off by concepts or technology outside of their ken.
 
-I've creaed a collage maker and am working on a matching / memory game. The collage maker will soon be added to this site in form of portfolio page and the matching game is still in early development so it will eventually find its way here, but not for a while
+I've created a collage maker and am working on a matching / memory game. The collage maker will soon be added to this site in form of portfolio page and the matching game is still in early development so it will eventually find its way here, but not for a while
 
 ### 9-4-2019
 
