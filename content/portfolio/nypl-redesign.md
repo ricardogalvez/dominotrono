@@ -48,18 +48,27 @@ newLayout: true
 {{< section_wrapper class="details-grid" >}}
 
      {{< copy_wrapper
-        class="details-grid__twoByTwo copy-block__left" >}}
-        Mucho words here...
+        class="details-grid__twoByTwo copy-block__right" >}}
+        From the outset the goal of the new design of the home page was to promote a variety of offerings from the library. As an institution of renown and regard the library has stood for generations as beacon of learning, research and culture. Our goal as an institution was to invite people from all walks of life to access the services on offer, be they digital or physical. The home page was designed to be the primary gateway into these offerings.
     {{< /copy_wrapper>}}
+
+    {{< image_cld 
+      loading="eager"
+      class="details-grid__twentyWords image-block__left"
+      alt="An image of the NYPL home page early in the design and prototype stage"
+      figcaption="The home page design clearly delineated the objectives of the Library: to promote expertise, events, education and services"
+      data-src="https://res.cloudinary.com/toupeeproofbullets/image/upload/q_auto,w_auto,c_scale,f_auto/v1608140034/nypl-dot-org/NYPL_HP_desktop_detail.jpg"
+    >}}
+
+    
 
     {{< image_cld 
       loading="eager"
       class="details-grid__twentyWords image-block__right"
       alt="An image of the NYPL home page early in the design and prototype stage"
-      figcaption="Add some interesting words here..."
-      data-src="https://res.cloudinary.com/toupeeproofbullets/image/upload/q_auto,w_auto,c_scale,f_auto/v1608140034/nypl-dot-org/NYPL_HP_desktop_detail.jpg"
+      
+      data-src="https://res.cloudinary.com/toupeeproofbullets/image/upload/q_auto,w_auto,c_scale,f_auto/v1548722313/nypl-dot-org/desktop_landing_browse.jpg"
     >}}
-
 {{< /section_wrapper>}}
 
 {{< section_wrapper class="details-grid" >}}
