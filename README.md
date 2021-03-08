@@ -6,6 +6,12 @@ Built with static site generator Hugo, SASS, and vanilla Javascript
 
 ### Versions
 
+- 0.0.3
+  - CSS refactored quite a bit, down reduced unused or redundant rules probably by 30%, shaved about 20k off.
+  - removed the old masthead section as it probably wasnt helpling
+  - positioned the sites structure to take advantage of prinicipals laid out in Every Layout
+  - hoome page is now structured to be better landing page and utilize some of the funky layouts I've been working on and should be able to deploy easily.
+
 - 0.0.2
   
   - A new beginning
