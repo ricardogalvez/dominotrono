@@ -1,32 +1,52 @@
 //
 // root sass
 //
-
-@import 'vendor/normalize';
-@import 'partials/functions';
+// Globals, Dynamic (functions / mixins), Vendors
+@import 'vendor/reset.min';
 @import 'vendor/include_media';
 @import 'vendor/fluid_type';
-@import 'partials/scaleRules';
-@import 'partials/custom_breakpoints';
-@import 'partials/colors';
-@import 'partials/typography';
-@import 'partials/grid';
-@import 'partials/nav';
-@import 'partials/tags_taxo';
-@import 'partials/articles';
-@import 'partials/sidebar';
-@import 'partials/site_content';
-@import 'partials/twitter_hash';
-@import 'partials/canvas';
-@import 'partials/summary';
-@import 'partials/header';
-@import 'partials/portfolio_images';
-@import 'partials/portfolio_list';
-@import 'partials/portfolio_item';
-@import 'partials/hp_portfolio';
-@import 'partials/hp_portfolio_2';
-@import 'partials/skill_block';
-@import 'partials/footer';
+@import 'scaleRules';
+@import 'dynamic/functions';
+
+// CUBE
+// Composition
+@import 'compose/stack';
+@import 'compose/custom_breakpoints';
+@import 'compose/colors';
+@import 'compose/typography';
+@import 'compose/grid';
+@import 'compose/main';
+
+// Utility
+@import 'utility/debug';
+@import 'utility/width_control';
+
+// Block
+@import 'block/nav';
+@import 'block/tags_taxo';
+@import 'block/jumbo';
+@import 'block/articles';
+@import 'block/experiments';
+@import 'block/sidebar';
+@import 'block/site_content';
+@import 'block/twitter_hash';
+@import 'block/canvas';
+@import 'block/summary';
+@import 'block/header';
+@import 'block/portfolio_images';
+@import 'block/portfolio_list';
+@import 'block/portfolio_item';
+@import 'block/hp_portfolio';
+@import 'block/hp_portfolio_2';
+@import 'block/portfolio_involvement.scss';
+@import 'block/skill_block';
+@import 'block/contact';
+@import 'block/svgElements';
+@import 'block/blue_blocks';
+@import 'block/footer';
+
+// Exception
+@import 'exception/single';
 
 *,
 *::before,
@@ -35,39 +55,38 @@
   }
 
 body {
-  background-color: $site-background-color;
+  background-color: $site-prince-purple;
+  // background-color: pink;
   // background-repeat: no-repeat;
-  // background-image: linear-gradient(to top left, rgba(9, 84, 104, 1), rgba(21, 20, 59, 1));
-  background-repeat: no-repeat;
-  background-size: cover;
+  // background-size: cover;
   color: $site-white;
   font-family: $frank-new;
   font-size: $base-font;
-  margin: 0 auto;
-  max-width: $wide-screen;
+  // margin: 0 auto;
+  // max-width: $wide-screen;
 }
 
-body > * {
-    margin-bottom: var(--s0);
-    padding-left: var(--s0);
-    padding-right: var(--s0);
-    padding-inline-end: var(--s0);
-    padding-inline-start: var(--s0);
-  }
+// body > * {
+//     margin-bottom: var(--s0);
+//     padding-left: var(--s0);
+//     padding-right: var(--s0);
+//     padding-inline-end: var(--s0);
+//     padding-inline-start: var(--s0);
+//   }
 
-main {
-  @include media('<=tablet') {
-      margin-block-start: var(--s0);
-    }
-}
+// main {
+//   @include media('<=tablet') {
+//       margin-block-start: var(--s0);
+//     }
+// }
 
 
-header {
-  @include media('<=tablet') {
-    padding-block-end: var(--s05);
-    padding-block-start: var(--s05);
-  }
-}
+// header {
+//   @include media('<=tablet') {
+//     padding-block-end: var(--s05);
+//     padding-block-start: var(--s05);
+//   }
+// }
 
 p,
 ul {

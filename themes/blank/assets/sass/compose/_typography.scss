@@ -1,0 +1,187 @@
+///
+/// type family
+///
+
+$sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji',
+  'Segoe UI Emoji', 'Segoe UI Symbol';
+
+$serif: Cambria, 'Liberation Serif', Times, Utopia, 'Hoefler Text', 'Nimbus Roman No9 L Regular', 'Times New Roman',
+  serif;
+
+$monospace: 'SFMono-Regular', Consolas, 'Andale Mono WT', 'Andale Mono', 'Lucida Console', 'Lucida Sans Typewriter',
+  'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', 'Nimbus Mono L', Monaco, 'Courier New', Courier,
+  monospace;
+
+$slab-serif: 'Rockwell', 'Rockwell Extra Bold', 'Courier New', Monoco, Courier, monospace;
+
+///
+/// from Adobe Typekit
+/// see FontFace Observer
+///
+
+$frank-new: 'frank-new', $sans-serif;
+$justus-pro: 'justus-pro', $serif;
+
+///
+/// type size
+///
+// $base-font-raw: 62.5;
+$base-font: var(--s0);
+$base-font-small: var(--s-1);
+$base-font-normal: var(--s0);
+$base-font-gigantic: var(--s2);
+$base-letter-spacing: 0.01;
+
+$max-line-length: var(--measure);
+
+///
+/// basic <h#>
+///
+
+$headings: (h1, h2, h3, h4, h5, h6);
+@each $heading in $headings {
+  #{$heading} {
+    font-family: $serif;
+    font-weight: 200;
+    font-style: normal;
+    // line-height: var(--s1);
+    margin: var(--s-1) 0;
+
+    ///
+    /// Headings that wrap links
+    ///
+
+    a {
+      text-decoration: none;
+      color: currentColor;
+
+      &:visited {
+        color: $site-white;
+      }
+    }
+  }
+
+  .fonts-loaded #{$heading} {
+    font-family: $justus-pro;
+  }
+}
+
+// do some calculations to get the proper fluidity:
+// min font size: var(--s0)
+// max font size var(--s2);
+// min view port: $small-screen
+// max view port: $mega-screen
+// slope = (maxFontSize - minFontSize) / (maxWidth - minWidth)
+// yAxisIntersection = -minWidth * slope + minFontSize
+// preferredValue = yAxisIntersection[rem] + (slope * 100)[vw]
+// TODO: make this a function so we can reuse it.... Every Where!
+$screenDifference: $mega - $small;
+$fontDifference: $s2 - $s1;
+$slope: $fontDifference / $screenDifference;
+$yAxisIntersection : (($small * -1) * $slope) + $s0;
+$preferredValue: $yAxisIntersection + ($slope * 100) * 1vw;
+
+// @debug $s0, $s1, $s2;
+// @debug $screenDifference;
+// @debug $fontDifference;
+// @debug $slope;
+// @debug $yAxisIntersection ;
+// @debug $preferredValue;
+
+h1 {
+    --line-height: clamp(1.25em, 3.5vw, 1.6em); 
+    // font-size: clamp(0.8em, var(--s1), 48px);;
+    font-size: clamp(var(--s1), $preferredValue, var(--s2));
+    line-height: var(--line-height);
+}
+
+h2 {
+  // @include responsive-font(2.75vw, 1.25rem, 24px, 24px);
+  font-size: clamp(1em, var(--s1), 48px);
+}
+
+h3 {
+  // @include responsive-font(1.75vw, 1.25em, 5.5em, 32px);
+  // font-size: clamp(, #{$ideal}, #{$max});
+  font-size: clamp(1.125em, var(--s0), 24px);
+}
+
+///
+/// Set a base link style here:
+///
+
+a {
+  &:link {
+    color: $site-link;
+  }
+
+  &:visited {
+    color: $site-link-visited;
+    background: $site-hot-orange;
+  }
+
+  &:hover,
+  &:focus {
+    color: $site-punk-pink;
+  }
+
+&:focus {
+    @include focus-ring(outline);
+  }
+}
+
+
+ 
+
+///
+/// Basic typographic rules
+///
+
+code {
+  background: transparentize($site-hot-orange, 0.85);
+  border-radius: 0.125em;
+  color: $site-white;
+  font-family: $monospace;
+  font-size: var(--s05);
+  padding: 0.15em;
+}
+
+// .content {
+
+    h2,
+    h3 {
+      margin-bottom: var(--s-1);
+    }
+
+    // set the max width for <p> elements to a reasonable / standard amount of characters
+    p {
+      max-width: $max-line-length;
+      margin: var(--s0) 0;
+      margin-block-end: var(--s0);
+      margin-block-start: var(--s0);
+    }
+
+    ul {
+      padding-left: var(--s0);
+
+      li ul {
+        border: 0;
+      }
+    }
+    h3 + ul {
+      margin-top: var(--s-1);
+    }
+
+    b,
+    strong {
+      font-weight: 500;
+    }
+  // } 
+
+.fonts-loaded {
+  font-family: $frank-new;
+
+    &__portfolioInvolvement ul {
+      word-break: break-word;
+    } 
+}

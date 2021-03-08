@@ -1,16 +1,16 @@
-{{ $paginator := .Paginate (where .Data.Pages "Type" "posts") }}
+
+
 {{ $local := .Site.IsServer }}
 {{ if $local }}
 {{ printf "<!-- ++ default list template ++ -->" | safeHTML }}
 {{ end  }}
 
-
 {{ partial "header.html" . }}
-<main class="posts">
-  <div class="grid-wrapper bobo-wrapper">
-    <div class="grid-wrapper__listParent">
-      {{ range $paginator.Pages }}
-      {{ partial "summary.html" . }}
+<main>
+  <div class="[ wrapper ] grid-wrapper">
+    <div class="grid-wrapper__listParent [ posts ]">
+      {{ range .Pages }}
+        {{ partial "summary.html" . }}
       {{ end }}
     </div>
   </div>

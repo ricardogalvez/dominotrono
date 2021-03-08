@@ -3,8 +3,8 @@
 {{ end }}
 {{ partial "header.html" . }}
 <main>
-  <div class="grid-wrapper">
-    <ul>
+  <div class="[ wrapper ][ grid-wrapper ]">
+    <ul class="[ stack ]">
       {{ $paginator := .Paginate (where .Data.Pages "Type" "portfolio") 20 }}
       {{ range $paginator.Pages }}
       {{ partial "portfolio_hero" . }}

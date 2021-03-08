@@ -17,7 +17,7 @@ postImage3x: 'https://res.cloudinary.com/toupeeproofbullets/image/upload/t_hp_po
 postImageAlt: ''
 figcaption: ''
 svgClipObjectClass: ''
-svgColorClass: 'site-color--white'
+svgColorClass: 'site-color--green-blue'
 tags: ['Web Design', 'Graphic Design', 'Illustration', 'Visual Design']
 weight: 10
 projectRoles: ['Designer']

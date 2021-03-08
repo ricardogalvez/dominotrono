@@ -17,7 +17,7 @@ portfolioHero3x: ''
 portfolioHeroAlt: 'A cropped image of the NASA Poster / Info-graphic'
 heroFigcaption: ''
 svgClipObjectClass: ''
-svgColorClass: 'site-color--white'
+svgColorClass: 'site-color--purple'
 tags: ['infographic', 'Graphic Design', 'Illustration']
 weight: 9
 projectRoles: ['Design Lead']

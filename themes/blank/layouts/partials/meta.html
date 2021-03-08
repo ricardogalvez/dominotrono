@@ -1,0 +1,15 @@
+{{ $ogImage := .Site.Params.openGraph.image }}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="designer" content="Ricardo E. Galvez, {{ .Site.Params.Title }}">
+<meta name="twitter:site" content="{{ .Site.Params.twitter.site }}">
+<meta name="twitter:title" content="{{ .Site.Params.twitter.title }}">
+<meta name="twitter:description" content="{{ .Site.Params.twitter.description }}">
+<meta name="twitter:card" content="{{ .Site.Params.twitter.card }}">
+<meta name="twitter:image" content="{{ .Site.BaseURL }}{{ $ogImage }}">
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ .Site.BaseURL }}" />
+<meta property="og:title" content="{{ .Site.Params.twitter.description }}">
+<meta property="og:description" content="{{ .Site.Params.twitter.description }}">
+<meta property="og:image" content="{{ .Site.BaseURL }}{{ $ogImage }}">

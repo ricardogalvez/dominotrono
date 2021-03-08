@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="972.552" height="1117.397" viewBox="0 0 972.552 1117.397">
+  <defs>
+    <style>
+      .a, .c {
+        stroke: #450121;
+      }
+
+      .a, .b, .c {
+        stroke-miterlimit: 10;
+        stroke-width: 10px;
+      }
+
+      .a {
+        fill: url(#a);
+      }
+
+      .b {
+        fill: #3b071f;
+        opacity: 0.5;
+        stroke: url(#b);
+      }
+
+      .c {
+        fill: url(#c);
+      }
+    </style>
+    <radialGradient id="a" data-name="New Gradient Swatch 1" cx="489.121" cy="427.047" fx="275.01762330854046" fy="-114.92265590225384" r="919.418" gradientTransform="matrix(0.961, -0.234, 0.168, 0.706, -46.7, 239.738)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#eb1e79"/>
+      <stop offset="0.511" stop-color="#c50f6b"/>
+      <stop offset="1" stop-color="#9c005d"/>
+    </radialGradient>
+    <linearGradient id="b" x1="331.268" y1="98.946" x2="398.72" y2="369.483" gradientTransform="translate(504.982 -176.249) rotate(76.144)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#d71a71"/>
+      <stop offset="0.229" stop-color="#d41a70"/>
+      <stop offset="0.387" stop-color="#cb196b"/>
+      <stop offset="0.524" stop-color="#bc1763"/>
+      <stop offset="0.649" stop-color="#a61457"/>
+      <stop offset="0.765" stop-color="#8a1048"/>
+      <stop offset="0.875" stop-color="#670c36"/>
+      <stop offset="0.979" stop-color="#3f0721"/>
+      <stop offset="1" stop-color="#36061c"/>
+    </linearGradient>
+    <radialGradient id="c" cx="347.348" cy="283.581" fx="400.62964127705266" fy="298.1097148620374" r="57.03" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#feffd5"/>
+      <stop offset="0.443" stop-color="#fcff85"/>
+      <stop offset="0.822" stop-color="#fbff46"/>
+      <stop offset="1" stop-color="#faff2e"/>
+      <stop offset="1"/>
+    </radialGradient>
+  </defs>
+  <g>
+    <path class="a" d="M677.081,272.3C526.253-3.207,382.686-42.048,267.508,49.144s-105.435,254.7-76.725,345.943c22.51,71.545,61.415,124.812,79.762,147.075C120.1,700.987,18.671,902.983,5.329,1111.946l962.223.449V219.422C869.1,219.422,770.977,238.265,677.081,272.3Z"/>
+    <ellipse class="b" cx="364.994" cy="234.215" rx="139.724" ry="113.169" transform="translate(50.183 532.496) rotate(-76.144)"/>
+    <circle class="c" cx="347.348" cy="283.581" r="57.03"/>
+  </g>
+</svg>

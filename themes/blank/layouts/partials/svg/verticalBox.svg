@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="383.529" height="896.801" viewBox="0 0 383.529 896.801">
+  <defs>
+    <style>
+      .a {
+        fill: #d7f9ff;
+        stroke: #38dfff;
+        stroke-miterlimit: 10;
+        stroke-width: 14.258px;
+        opacity: 0.9;
+      }
+
+      .b {
+        fill: #38dfff;
+      }
+    </style>
+  </defs>
+  <g>
+    <rect class="a" x="7.129" y="7.129" width="369.271" height="882.543" rx="75.28"/>
+    <rect class="b" x="56.569" y="80.318" width="28.579" height="314.37"/>
+    <rect class="b" x="114.067" y="80.999" width="28.579" height="314.37"/>
+    <rect class="b" x="171.566" y="80.999" width="28.579" height="314.37"/>
+  </g>
+</svg>

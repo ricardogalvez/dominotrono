@@ -1,11 +1,25 @@
 {
+  "editor.formatOnSave": false,
   "editor.tabSize": 2,
   "svg.preview.background": "transparent",
   "editor.autoIndent": false,
   "cSpell.words": [
     "NYPL's"
   ],
+  
+  "html.format.indentInnerHtml": true,
+  "html.format.wrapAttributes": "preserve-aligned",
+  "html.format.enable": false,
   "html.format.indentHandlebars": true,
   "html.format.preserveNewLines": false,
-  "html.format.enable": false
+
+   "workbench.colorCustomizations": {
+    "titleBar.activeForeground": "#000",
+    "titleBar.inactiveForeground": "#cccccc",
+    "titleBar.activeBackground": "#84ff4b",
+    "titleBar.inactiveBackground": "#495c06",
+    "activityBar.foreground": "#84ff4b",
+    "statusBar.foreground": "#82fd51",
+    "statusBar.background": "#237c00"
+  },
 }

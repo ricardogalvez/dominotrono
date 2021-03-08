@@ -1,0 +1,14 @@
+.site-single {
+
+ ul {
+  margin-left: var(--s0);
+  margin-inline-start: var(--s0);
+  max-width: var(--measure);
+ }
+
+ li {
+   font-style: italic;
+   font-size: var(--s05);
+   list-style-type: disc;
+ }
+}

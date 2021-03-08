@@ -34,11 +34,6 @@
       </figure>
       {{ end }}
       <h1>{{ .Title }}</h1>
-      {{ if $svg }}
-      <div class="portfolio-list-item__content--deck" aria-hidden="true">
-        {{ ( partial ( printf "svg/%s.svg" ( $svg | default "soloDotAngle" )) . ) }}
-      </div>
-      {{ end }}
       {{ if and ( $projectDescription ) ( ne $projectDescription "" ) }}
       <p class="portfolio-list-item__content--description">{{ $projectDescription }}</p>
       {{ end }}

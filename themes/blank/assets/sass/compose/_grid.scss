@@ -1,0 +1,62 @@
+///
+/// Grid & Flexbox Settings
+///
+
+///
+/// Header
+///
+
+/// Some Common Variables that should be moved to a separate file, possibly the _functions mixin...
+/// Desktop view ports
+
+
+.site-header {
+
+  //
+  // Sets up the flexbox and layout ONLY for the nav...
+  //
+  &__siteNavigation {
+    @include media('>=phone') {
+      flex: 1 1 5%;
+    }
+
+    @include media('>=tablet') {
+      padding-block-end: var(--s-1);
+      padding-block-start: var(--s-1);
+      padding-bottom: var(--s-1);
+      padding-top: var(--s-1);
+    }
+  }
+}
+
+//
+// Grid Wrapper(s)
+//
+
+.grid-wrapper {
+  @include media('>=phone') {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  @include media('>=tablet') {
+    grid-template-columns: minmax(1em, $tablet-column) repeat(3, 1fr);
+  }
+
+  @include media('>=desktop') {
+    grid-template-columns: $left-column repeat(3, 1fr);
+  }
+
+  @include media('>=phone') {
+    .grid-site-data {
+      background-color: $site-background-color;
+      grid-column: 1 / 1;
+      grid-row: 11 / 12;
+    }
+  } // / phone breakpoint
+
+  h1 {
+    @include add-to-grid('>=phone', 2, 5, 1, 2);
+    @include add-to-grid('>=tablet', 2, 5, 1, 2);
+  }
+}

@@ -4,7 +4,7 @@ date: 2019-10-01T14:36:52-04:00
 draft: false
 categories: 'portfolio'
 author: Ricardo G.
-postImageSqip: '../media/portfolio/il_nido_seattle/ilNidoCard.svg'
+postImageSqip: '../media/portfolio/il_nido_seattle/sqip.svg'
 portfolioHero1x: 'https://res.cloudinary.com/toupeeproofbullets/image/upload/t_portfolio_hero_16_9/v1569947324/il-nido-il-corvo/il-nido-Desktop-production.jpg'
 portfolioHero2x: 'https://res.cloudinary.com/toupeeproofbullets/image/upload/t_portfolio_hero_2x/v1569947324/il-nido-il-corvo/il-nido-Desktop-production.jpg'
 portfolioHero3x: 'https://res.cloudinary.com/toupeeproofbullets/image/upload/t_portfolio_hero_3x/v1569947324/il-nido-il-corvo/il-nido-Desktop-production.jpg'
@@ -16,13 +16,13 @@ postImage2x: 'https://res.cloudinary.com/toupeeproofbullets/image/upload/t_hp_po
 postImageAlt: 'A thumbnail image of the Il Nido Seattle Homepage'
 figcaption: ''
 svgClipObjectClass: ''
-svgColorClass: 'site-color--yellow'
+svgColorClass: 'site-color--canary-yellow'
 projectRoles: ['Art Direction', 'Designer', 'Developer']
 projectClients: ['Chef Mike Easton of Il Nido Seattle']
 projectCredits: []
 projectDate: ''
-tags: ['Logo Design', 'Web Design', 'Web Development', 'Brand Identity']
-weight: 2
+tags: ['Logo Design', 'Web Design', 'Web Development', 'Brand Identity', 'HTML', 'JavaScript', 'Sass']
+weight: -9
 externalURL: 'http://ilnidoseattle.com'
 projectDesc: 'A freelance design and development project contracted by the Chef / Owner of Il Nido Seattle. This new business required a simple, maintenance-free website.'
 newLayout: true

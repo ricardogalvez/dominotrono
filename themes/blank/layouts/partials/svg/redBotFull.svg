@@ -1,0 +1,66 @@
+<svg class="[ red-bot ]" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 1930 2430.335">
+  <defs>
+    <style>
+      .aa, .cc, .dd {
+        stroke: #450121;
+      }
+
+      .aa, .bb, .cc, .dd {
+        stroke-miterlimit: 10;
+        stroke-width: 10px;
+      }
+
+      .aa {
+        fill: url(#aa);
+      }
+
+      .bb {
+        fill: #3b071f;
+        opacity: 0.5;
+        stroke: url(#bb);
+      }
+
+      .cc {
+        fill: url(#cc);
+      }
+
+      .dd {
+        fill: url(#dd);
+      }
+    </style>
+    <radialGradient id="aa" data-name="New Gradient Swatch 1" cx="422.161" cy="209.722" fx="315.4417828629431" fy="-60.42231637839393" r="458.282" gradientTransform="matrix(0.961, -0.234, 0.168, 0.706, -12.117, 160.227)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#eb1e79"/>
+      <stop offset="0.511" stop-color="#c50f6b"/>
+      <stop offset="1" stop-color="#9c005d"/>
+    </radialGradient>
+    <linearGradient id="bb" x1="330.939" y1="98.946" x2="398.391" y2="369.483" gradientTransform="translate(504.731 -175.93) rotate(76.144)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#d71a71"/>
+      <stop offset="0.229" stop-color="#d41a70"/>
+      <stop offset="0.387" stop-color="#cb196b"/>
+      <stop offset="0.524" stop-color="#bc1763"/>
+      <stop offset="0.649" stop-color="#a61457"/>
+      <stop offset="0.765" stop-color="#8a1048"/>
+      <stop offset="0.875" stop-color="#670c36"/>
+      <stop offset="0.979" stop-color="#3f0721"/>
+      <stop offset="1" stop-color="#36061c"/>
+    </linearGradient>
+    <radialGradient id="cc" cx="347.019" cy="283.581" fx="400.3003801481801" fy="298.1097148620374" r="57.03" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#feffd5"/>
+      <stop offset="0.443" stop-color="#fcff85"/>
+      <stop offset="0.822" stop-color="#fbff46"/>
+      <stop offset="1" stop-color="#faff2e"/>
+      <stop offset="1"/>
+    </radialGradient>
+    <radialGradient id="dd" data-name="New Gradient Swatch 2" cx="864.962" cy="973.333" fx="675.4910317135392" fy="251.7871997181461" r="932.104" gradientTransform="translate(0 127.477) scale(1 0.869)" gradientUnits="userSpaceOnUse">
+      <stop offset="0.111" stop-color="#eb1e79"/>
+      <stop offset="0.418" stop-color="#c50f6b"/>
+      <stop offset="0.712" stop-color="#9c005d"/>
+    </radialGradient>
+  </defs>
+  <g>
+    <path class="aa" d="M676.752,272.3C525.924-3.207,382.357-42.048,267.178,49.144s-105.434,254.7-76.725,345.943c22.51,71.545,79.762,147.075,79.762,147.075S420,410.335,676.752,272.3Z"/>
+    <ellipse class="bb" cx="364.665" cy="234.215" rx="139.724" ry="113.169" transform="translate(49.933 532.176) rotate(-76.144)"/>
+    <circle class="cc" cx="347.019" cy="283.581" r="57.03"/>
+    <path class="dd" d="M965,220.783c-468.868,0-930.483,429.153-960,892.524V2425.335H1925V1113.307C1895.483,649.936,1433.868,220.783,965,220.783Z"/>
+  </g>
+</svg>

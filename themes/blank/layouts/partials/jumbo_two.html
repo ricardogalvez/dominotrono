@@ -1,2 +1,36 @@
-<div class="jumbo"></div>
-<p>this space is the fun weird part of the home page</p>
+{{ $local := .Site.IsServer }} {{ if $local }} {{ printf "<!-- +++ jumbo_two.html  -->" | safeHTML }} {{ end }}
+<div class="[ jumbo ][ test ]">
+  {{ partial "svg/spookyBackground.svg" . }} 
+  {{ partial "svg/redBotHalf.svg" . }}
+  <div class="[ blue-block alpha ]">
+    <a href="#">
+      <h2>HTML</h2>
+      <p>This robot of consolation</p>
+    </a>
+  </div>
+  <div class="[ blue-block beta ]">
+    <a href="#">
+    <h2>CSS</h2>
+    <p>Not a complete and total mystery</p>
+    </a>
+  </div>
+  <div class="[ blue-block gamma ]">
+    
+    <a href="#">
+      <h2>JavaScript</h2>
+      <p>An equinox found upon a barren shore</p>
+    </a>
+  </div>
+  <div class="[ blue-block delta ]">
+    <a href="#">
+      <h2>SVG</h2>
+      <p>Divided pulsar wavers ceaselessly</p>
+    </a>
+  </div>
+  <div class="[ blue-block epsilon ]">
+    <a href="#">
+      <h2>Hugo</h2>
+      <p>Righteous indignation with flavored popsicles</p>
+    </a>
+  </div>
+</div>

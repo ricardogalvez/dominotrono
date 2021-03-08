@@ -14,5 +14,3 @@ I am highly proficient with the Adobe Creative Suite. I have strong expertise wo
 I started my design career in the 5th grade by entering and winning a “crazy t-shirt” contest. My love for typography stems from being a graffiti writer and painting murals in New York and Philadelphia. My passion for art and design spans many years. From punk rock show fliers produced at Kinko’s with X-Acto knives, glue sticks, and xerox machines through skateboard graphics through my training as an offset printing press operator, I’ve always been an artist and designer.
 
 I have been living and working in New York City since 2005. I am originally from Albuquerque, New Mexico. I have a wife, two kids, two cats, and an old house. In my spare time, I mess around with a CNC machine in my cellar. From time to time, I dust off my skateboard, cruise around and carve lines in space-time.
-
-I’m available for projects. [Let's talk!](mailto:ricardo.e.galvez@gmail.com)

@@ -1,0 +1,49 @@
+{{ $customJS := .Param "experimentJS" }}
+{{ $customJsURL := .Site.Params.customJsURL }}
+{{ $customJsPath := .Site.Params.customJsPath }}
+{{ $pageJS := .Param "vendorJS" }}
+{{ $vendorPath := .Site.Params.vendorPath }}
+{{ $jsVendor := .Site.Params.vendors }}
+{{ $jsLowerCased := lower $pageJS }}
+{{ $local := .Site.IsServer }}
+{{ $cat := .Param "categories" }}
+
+{{ if $pageJS }}
+  {{  range $vendorName, $vendorURL := $jsVendor }}
+    {{ if eq $vendorName $jsLowerCased }}
+      <div class="{{ $vendorName }}" data-vendor="{{ lower $pageJS }}">
+        <p>the vendor's name: <b>{{ $vendorName }}</b><br>
+          the initial path to the javascript: <b>{{ $vendorPath }}</b><br>
+          the actual file name: <b>{{ $vendorURL }}</b><br>
+          here is the lower cased vendor name: {{ $jsLowerCased }}
+        </p>
+      </div>
+      {{ if eq $jsLowerCased "paperjs" }}
+        {{ if $local }}
+        {{ printf "<!-- If paper js is present then we do special stuff  -->" | safeHTML }}
+        {{ end  }}
+          <script type="text/javascript" src="{{ $.Site.BaseURL }}{{ $vendorPath }}{{ $vendorURL }}"></script>
+          
+          <script type="text/paperscript" src="{{ $.Site.BaseURL }}js/PaperAnyone.js" canvas="paperCanvas"></script>
+          
+          <canvas class="canvas__myCanvas" id="paperCanvas" resize></canvas>
+
+      {{ else if eq $jsLowerCased "gsapjs" }}
+        {{ printf "<!-- If GSAP is present then we directly load from their CDN  -->" | safeHTML }}
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
+
+      {{ else }}
+        <p>and the full path we set is here: <b>{{ $.Site.BaseURL }}
+          {{ $vendorPath }}{{ $vendorURL }}</b><br></p>
+        <script src="{{ $.Site.BaseURL }}{{ $vendorPath }}{{ $vendorURL }}"></script>
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+{{ if $customJS }}
+  {{ if $local }}
+  <p>we have a custom JS file in the hizzy</p>
+  {{ end }}
+  {{ $.Site.BaseURL }}{{ $customJsPath }}{{ $customJS }}
+    <script src="{{ $.Site.BaseURL }}{{ $customJsPath }}{{ $customJS }}"></script>
+{{ end }}

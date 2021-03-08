@@ -1,0 +1,42 @@
+///
+/// Header
+///
+
+header {
+  background-color: $site-black;
+  padding-top: clamp(var(--s1), 2.5vw, var(--s2));
+  padding-bottom:  var(--s1);
+  padding-block-start:  clamp(var(--s1), 2.5vw, var(--s2));
+  padding-block-end: var(--s1);
+  
+  @include media('>=tablet') {
+    display: block;
+  }
+  // TODO: This feels a bit fragile and could cause problems down the road:
+  & > .wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .siteNameContainer {
+    @include media('>=phone') {
+      display: block;
+      flex: 2 1 95%;
+    }
+
+    // &--name {
+      
+    //   @include media('>=tablet') {
+    //     margin: 0;
+    //   }
+
+    //   font-size: clamp(24px, 2.25vw, 48px);
+    //   @include basic-drop-shadow;
+    //   align-self: end;
+    //   color: $site-white;
+    //   font-style: normal;
+    //   font-weight: 200;
+    //   text-decoration: none;
+    // }
+  }
+}

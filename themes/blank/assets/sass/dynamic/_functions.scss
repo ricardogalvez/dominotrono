@@ -1,0 +1,121 @@
+//
+// Fun with functions:
+// Also general mixins here too!
+//
+
+//
+// Functions aqui
+//
+
+//
+// import using @use the grids
+//
+
+@import 'dynamic/portfolio_grids';
+
+// Very Basic Text Shadow Mixin:
+@mixin basic-drop-shadow($type: text) {
+  @if $type == text {
+    text-shadow: 2px 2px 2px $site-black;
+  } @else if $type == box {
+    box-shadow: 2px 2px 2px $site-black;
+  } @else if $type == svg {
+    filter: drop-shadow(1px 1px 1px $site-black);
+  }
+}
+
+// Mixins
+// mixin for basic padding
+// todo: add {params}
+// param {$media} : >=phone
+// param {$padding} $pl/$pr = padding-right left etc...
+
+@mixin visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+// $mw = max width
+// $pl = padding left
+// $pr = padding right
+@mixin basic-article-wrapper($breakpoint, $mw: "", $pl: #{initial}, $pr: #{initial}) {
+  @include media(#{$breakpoint}) {
+    max-width: $mw;
+    padding-left: $pl;
+    padding-right: $pr;
+  }
+}
+
+// In some cases we might want to vary the kind of focus ring we apply,
+// @Param
+//
+
+@mixin focus-ring($type, $color: $site-focus-ring) {
+  @if $type == 'outline' {
+    outline: dotted $color (1em / 16);
+  } @else if $type == 'border' {
+    border: (1em / 16) dotted $color;
+  } @else if $type == 'box-shadow' {
+    box-shadow: inset 0 0 0 (1em / 16) $color;
+  }
+}
+
+//
+// SVG Overlay mixin for the home page
+//
+
+@keyframes simpleFadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes slideDownMedium {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDownLarge {
+  
+  0% {
+    --y: -200px;
+    opacity: 0;
+    transform: translateY(var(--y));
+  }
+  100% {
+    --y: 0%;
+    opacity: 1;
+    transform: translateY(var(--y));
+  }
+}
+
+@mixin slide-up-down(
+  $animation-name: slideDownMedium,
+  $duration: 550ms,
+  $direction: normal,
+  $delay: 175ms,
+  $iteration-count: 1,
+  $timing-function: ease-out,
+  $fill-mode: both
+) {
+  animation: $animation-name;
+  animation-duration: $duration;
+  animation-direction: $direction;
+  animation-delay: $delay;
+  animation-iteration-count: $iteration-count;
+  animation-timing-function: ease-out;
+  animation-fill-mode: $fill-mode;
+}
+

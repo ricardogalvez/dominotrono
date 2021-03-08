@@ -4,31 +4,48 @@
 {{ end  }}
 {{ partial "header.html" . }}
 <main>
-  <div class="grid-wrapper">
-    <div class="grid-wrapper__listParent">
-      <article class="site-article">
+  <div class="[ wrapper ][ grid-wrapper ]">
+    {{/*  <div class="grid-wrapper__listParent">  */}}
+      <article class="[ site-article ]">
         <h1>{{ .Title }}</h1>
         {{ if ne .Section "portfolio" }}
         <p class="siteAuthor">by: {{ .Site.Params.author }}</p>
-          {{ if $local }}
+          
           <time>{{ .Date.Format "01.02.2006 15:04" }}</time>
-          {{ end }}
+          
         {{ end }}
-        <section class="site-single__content">
+        <section class="site-single">
           {{ .Content }}
         </section>
-      </article>
-      <ul id="tags" class="site-tags">
-        {{ range .Params.tags }}
-        <li class="site-tags__tag">
-          <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> </li>
+        {{ if eq .Type "experiments"  }}
+          {{/*  
+             Check if this is an SVG experiment:
+          Front matter would be like
+          experimentType = "svg" or "canvas" or... whatever...
+          use the title as the containing element root id
+          */}}
+          {{ $experimentType := .Page.Param "experimentType" }}
+          {{ if $local }}
+          {{ printf "<!-- +++ experimental svg / canvas / ???  -->" | safeHTML }}
+          {{ end  }}
+          {{ if and ( eq $experimentType "svg" ) ( ne $experimentType "" ) }}
+              
+              <svg id="{{ lower .Title }}"  class="[ svg-exp ]" viewBox="0 0 0 0"></svg>
+            
+          {{ end  }}
         {{ end }}
-      </ul>
-    </div>
+      </article>
+      {{ if .Params.tags }}
+      {{ partial "tags.html" . }}
+      {{ end }}
+    {{/*  </div>  */}}
   </div>
 </main>
 {{ partial "sidebar.html" . }}
 {{ partial "footer.html" . }}
+{{/*  {{ if eq .Type "experiments"  }}
+  {{ partial "experiments.html" . }}
+{{ end }}  */}}
 {{ if $local }}
 {{ partial "dev.html" . }}
 {{ end }}

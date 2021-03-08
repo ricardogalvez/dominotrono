@@ -1,0 +1,30 @@
+// Squeeze
+// This is width control for high level containers containers
+
+.squeeze > * {
+  padding-left: var(--s0);
+  padding-right: var(--s0);
+  padding-inline-end: var(--s0);
+  padding-inline-start: var(--s0);
+}
+
+// Make all the children's children have a max widht.
+// TODO: make sure this doesnt come back to haunt us in the rump...
+//
+.belt > * > * {
+  max-width: $wide-screen;
+}
+
+.belt > * > p {
+  max-width: var(--measure);
+}
+
+.wrapper {
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  // max-width: $wide-screen;
+  padding-left: var(--s0);
+  padding-right: var(--s0);
+  padding-inline-end: var(--s0);
+  padding-inline-start: var(--s0);
+}

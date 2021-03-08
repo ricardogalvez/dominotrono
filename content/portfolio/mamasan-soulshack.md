@@ -28,8 +28,6 @@ projectDesc: 'Graphic and brand design for a Portland Oregon based restaurant.'
 newLayout: true
 ---
 
-### Project Details
-
 {{< section_wrapper class="hero-grid" >}}
 
     {{< image

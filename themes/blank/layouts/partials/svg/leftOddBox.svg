@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="269.192" height="176.09" viewBox="0 0 269.192 176.09">
+  <defs>
+    <style>
+      .a {
+        fill: #d7f9ff;
+        stroke: #38dfff;
+        stroke-miterlimit: 10;
+        stroke-width: 14.988px;
+        opacity: 0.9;
+      }
+
+      .b {
+        fill: #38dfff;
+      }
+    </style>
+  </defs>
+  <g>
+    <path class="a" d="M232.586,168.6,36.606,146.011c-16.078,0-29.112-14.436-29.112-32.244V52.154c0-17.808,13.034-32.244,29.112-32.244L232.586,7.494c16.078,0,29.112,14.436,29.112,32.244v96.614C261.7,154.16,248.664,168.6,232.586,168.6Z"/>
+    <rect class="b" x="43.421" y="52.676" width="169.073" height="15.92"/>
+    <rect class="b" x="43.421" y="79.676" width="169.073" height="15.92"/>
+  </g>
+</svg>

@@ -9,7 +9,7 @@
 {{ $atWrapper := "article-grid-wrapper"}}
 {{ $sgWrapper := "section-grid-wrapper"}}
 {{ $imgWrapper := "grid-wrapper" }}
-<aside class="{{ if ( $newLayout )}}{{ $atWrapper }}{{ else }}{{ $imgWrapper }}{{ end }}__portfolioInvolvement">
+<aside class="portfolioInvolvement squeeze">
   {{ if and ( $url ) ( ne $url "" )}}
   <h3>Site</h3>
   <ul>
@@ -17,7 +17,7 @@
   </ul>
   {{ end }}
   {{ if and ( $role ) ( ne $role "" ) }}
-  <h3>Involvement</h3>
+  <h3>Role</h3>
   <ul>
     {{ range $role }}
     <li>{{ . }}</li>
@@ -48,8 +48,8 @@
   {{ end }}
   {{ if .Site.IsServer }}
   {{ if and ( $tags ) ( ne $tags "" ) }}
-  <h3>Filed under:</h3>
-  <ul id="tags" class="site-tags">
+  <h3>Tagged:</h3>
+  <ul id="tags">
     {{ range $tags }}
     <li class="site-tags__tag">
       <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>

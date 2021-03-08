@@ -2,6 +2,7 @@
 title: 'cv'
 date: 2017-12-27T13:48:52-05:00
 draft: false
+url: '/cv'
 menu:
   main:
     weight: 0
@@ -13,20 +14,36 @@ Contact: ricardo.e.galvez@gmail.com
 ## Skills and Expertise
 
 - Code: HTML / CSS / Javascript / git
-- Design: Adobe CS / Sketch / InVision
-- UX: Wireframing / Prototyping / Responsive Design / Accessibility
+- Design: Adobe CS / Sketch 
+- UX: Wire-framing / Prototyping / Responsive Design / Accessibility
 - Methods: Agile / Data Driven / User Testing
-- Static Site Generators (Hugo, Jekyll)
+- Static Site Generator Hugo
 
 ## Professional Accomplishments:
 
-## Freelance Designer and Developer, Brooklyn NY,  2018 - 2020
+### Freelance Designer and Developer, Brooklyn NY,  2018 - 2021
 
-**Il Corvo Pasta ~ Il Nido at the Alki Homestead, Seattle WA, 2018** 
+**Decolonizing New Mexico**
+
+- Design and development of fully functional website
+
+- Technologies used include, Hugo, Netlify, Forestry.io
+
+- All design and prototyping work completed in Adobe XD
+
+**Il Nido at the Alki Homestead, Seattle WA, 2018 - 2020** 
+
+- End to end project development and execution
+
+- Designed and developed the website for a new restaurant concept and location
 
 - Consultation, Development, User Experience Design, Branding Strategy
 
-## New York Public Library, New York, NY 2015 – 2018
+**FYLE**
+
+- 
+
+### New York Public Library, New York, NY 2015 – 2018
 
 **Product Design and Development**
 
@@ -59,7 +76,7 @@ Contact: ricardo.e.galvez@gmail.com
 
 - Integrated assistive device requirements to successfully achieve an AA rating for accessibility standards across all web sites and applications.
 
-## WNET/THIRTEEN, New York Public Television (PBS), New York, NY, 2009 - 2015
+### WNET/THIRTEEN, New York Public Television (PBS), New York, NY, 2009 - 2015
 
 **Design Strategy**
 
@@ -79,7 +96,7 @@ Contact: ricardo.e.galvez@gmail.com
 
 - While working in an Agile environment, exceeded expectations by delivering production-ready templates and visual designs ahead of schedule.
 
-## Freelance Projects 2009 - 2015
+### Freelance Projects 2009 - 2015
 
 **Mama San Soul Shack, Portland OR, 2015**
 

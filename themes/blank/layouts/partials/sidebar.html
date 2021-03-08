@@ -1,17 +1,18 @@
-<aside class="sidebar-prime">
-  <div class="sidebar-prime__inner">
-    <h3 class="sidebar-prime__sidebarTitle">Etcetera</h3>
-    <span class="sidebar-prime__sidebarSubTitle">A feed of all published work on this site.</span>
-    <ul class="sidebar-prime__sidebarList">
-      {{ $posts := ($.Site.GetPage "Type" "posts") }}
-      {{ $portfolio := ($.Site.GetPage "Type" "portfolio") }}
-      {{ $experiments := ($.Site.GetPage "Type" "experiments") }}
-      {{ $groups := slice $posts $portfolio $experiments }}
-      {{ range $groups }}
+{{ $posts := ($.Site.GetPage "Type" "posts") }}
+{{ $portfolio := ($.Site.GetPage "Type" "portfolio") }}
+{{ $experiments := ($.Site.GetPage "Type" "experiments") }}
+{{ $groups := slice $posts $portfolio $experiments }}
+
+<aside class="[ sidebar-prime ]">
+  <div class="[ wrapper ]">
+  <h3 class="[ sidebarTitle ]">Etcetera</h3>
+  <p>A feed of all published work on this site.</p>
+  <ul class="[ sidebarList ]">
+    {{ range $groups }}
       {{ range .Pages }}
-      {{ .Render "post-grid" }}
+        {{ .Render "post-grid" }}
       {{ end }}
-      {{ end }}
-    </ul>
+    {{ end }}
+  </ul>
   </div>
 </aside>

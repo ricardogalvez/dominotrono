@@ -24,7 +24,7 @@ projectClients: ['Acqwash']
 projectCredits: ['Rafael Hernandez']
 projectDate: ''
 tags: ['UX', 'Web Design']
-weight: 2
+weight: -8
 externalURL: ''
 projectDesc: 'My role in this project was to create the UX and visual design for this exciting NYC startup.'
 newLayout: true

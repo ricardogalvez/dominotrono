@@ -1,0 +1,81 @@
+///
+/// A Sidebar Prime
+/// always found at the bottom of the page
+// This is that block of blocks, its the feed
+// Should look like a periodic table of elements at some point...
+
+.sidebar-prime {
+  background-color: $site-black;
+  .sidebarTitle {
+    @include responsive-font(3.75vw, 2.25rem, 5.5rem, 32px);
+    @include media('>tablet') {
+      margin-bottom:  var(--s0);
+    }
+  }
+
+  .sidebarList,
+  .sidebarTags {
+    list-style: none;
+    padding: 0;
+  }
+
+  .sidebarList {
+    display: flex;
+    flex-wrap: wrap;
+
+    > li {
+      padding: var(--s0);
+
+      &:nth-of-type(4n) {
+        padding-right: 0;
+
+        ul {
+          padding-right: 1em;
+        }
+      }
+
+      .post-grid {
+        min-height: 13ex;
+        padding: 0;
+
+        .drop-cap {
+          & > a {
+            @include responsive-font(5vw, 2.6rem, 5rem, 22px);
+            border-bottom: solid var(--s-3) $site-white;
+            display: block;
+            font-family: $justus-pro;
+            font-weight: 400;
+            font-style: normal;
+            line-height: var(--s2);
+            margin-bottom: var(--s-1);
+            text-decoration: none;
+            width: 25%;
+
+            .small-letter {
+              @include responsive-font(2.5vw, 1.24rem, 3rem, 18px);
+            }
+
+            &:visited {
+              color: currentColor;
+            }
+
+            &:hover,
+            &:focus {
+              color: $site-white;
+            }
+          }
+        }
+
+        .full-title {
+          @include responsive-font(1.25vw, 0.65em, 1em, 12px);
+        }
+      }
+    }
+
+    > li:hover,
+    > li:focus {
+      background: $site-lava-orange;
+      background: linear-gradient(to bottom right, $site-lava-orange, $site-punk-pink);
+    }
+  }
+}

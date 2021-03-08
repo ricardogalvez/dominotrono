@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="673.446" height="756.524" viewBox="0 0 673.446 756.524">
+  <defs>
+    <style>
+      .a, .b {
+        fill: #38dfff;
+      }
+
+      .a {
+        stroke: #d7f9ff;
+        stroke-miterlimit: 10;
+        stroke-width: 17.982px;
+        opacity: 0.9;
+      }
+    </style>
+  </defs>
+  <g>
+    <rect class="a" x="8.991" y="8.991" width="655.464" height="738.542" rx="89.912"/>
+    <rect class="b" x="107.844" y="96.773" width="375.611" height="65.324"/>
+    <rect class="b" x="107.844" y="205.645" width="375.611" height="65.324"/>
+    <rect class="b" x="107.844" y="302.27" width="240.881" height="16.331"/>
+    <rect class="b" x="107.844" y="337.654" width="240.881" height="16.331"/>
+    <rect class="b" x="107.844" y="373.037" width="240.881" height="16.331"/>
+  </g>
+</svg>

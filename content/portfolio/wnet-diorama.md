@@ -84,19 +84,22 @@ newLayout: true
       class="details-grid__twoByTwo image-block__left"
       alt="An Image of a card from the video series"
       imgHeading=""
-      figcaption=""
+      figcaption="Another still form the termite series"
       >}}
   
-     {{< image_cld
-       data-src="https://res.cloudinary.com/toupeeproofbullets/image/upload/q_auto,w_auto,c_scale,f_auto/v1549730468/diorama/diorama_termite_vid_card_4.jpg"
-        
-        class="details-grid__twoByTwo image-block__right"
-        alt="An Image of a card from the video series"
-        imgHeading=""
-        figcaption="A set of video cards from the termite episode"
-      >}}
-
   {{< /section_wrapper >}}
+
+  {{< section_wrapper class="details-grid" >}}
+
+    {{< image_cld
+        data-src="https://res.cloudinary.com/toupeeproofbullets/image/upload/q_auto,w_auto,c_scale,f_auto/v1549730468/diorama/diorama_termite_vid_card_4.jpg"
+          class="details-grid__fiftyWords big-image"
+          alt="An Image of a card from the video series"
+          imgHeading=""
+          figcaption="A set of video cards from the termite episode"
+        >}}  
+
+  {{< /section_wrapper>}}
 
   {{< section_wrapper class="details-grid" >}}
 

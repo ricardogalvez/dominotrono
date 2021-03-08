@@ -1,0 +1,15 @@
+//
+// Experiments Styles
+// This handles how the experiments are laid out on a give page
+// handles SVGs and Canvas elements
+
+
+.svg-exp {
+  // TODO: Magic numbers (vh & vw) here need to be resolved w/  some reseting the css via the JS file
+  background-color: rebeccapurple;
+  // height: calc(80vh - var(--s1));
+  // position: absolute;
+  // top: var(--s5);
+  // width: 100%;
+  // z-index: -100;
+}

@@ -3,7 +3,7 @@ author: Ricardo G.
 categories: ['experiments']
 date: 2018-12-17T19:26:30-05:00
 draft: false
-tags: []
+tags: ['javascript','paper js']
 title: 'Paper JS any one?'
 vendorJS: 'paperJS'
 ---
